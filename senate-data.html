@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+</head>
+
+<body>
+    <nav>
+        <div>
+            <div>
+                <a href="#">TGIF</a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Congress 113</a>
+                    <ul>
+                        <li><a href="#">Senate</a></li>
+                        <li><a href="#">House</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <header>
+        <div>
+        </div>
+    </header>
+    <!--Table container-->
+    <div>
+        <h2>Senators</h2>
+        <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Members</th>
+                    <th>First name</th>
+                    <th>Middle name</th>
+                    <th>Last name</th>
+                    <th>Party</th>
+                    <th>Total votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lamar</td>
+                    <td></td>
+                    <td>Alexander</td>
+                    <td>R</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Kelly</td>
+                    <td>null</td>
+                    <td>Ayotte</td>
+                    <td>R</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Roy</td>
+                    <td></td>
+                    <td>Blunt</td>
+                    <td>R</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Barbara</td>
+                    <td>null</td>
+                    <td>Boxer</td>
+                    <td>D</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Sherrod</td>
+                    <td></td>
+                    <td>Brown</td>
+                    <td>D</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Richard</td>
+                    <td>M.</td>
+                    <td>Burr</td>
+                    <td>R</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Tammy</td>
+                    <td>null</td>
+                    <td>Baldwin</td>
+                    <td>D</td>
+                    <td>657</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<pre id="senate-data"></pre>
+<script src="pro-congress-113-senate.js"></script>
+<script>
+    document.getElementById("senate-data").innerHTML = JSON.stringify(data, null, 2);
+</script></html>
