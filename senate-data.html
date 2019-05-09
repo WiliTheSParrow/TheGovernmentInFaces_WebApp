@@ -104,7 +104,23 @@
         </table>
     </div>
 </body>
-<pre id="senate-data"></pre>
+<table id="senate-data">
+    <tr id="fullName">
+        <td></td>
+    </tr>
+    <tr id="party">
+        <td></td>
+    </tr>
+    <tr id="state">
+        <td></td>
+    </tr>
+    <tr id="seniority">
+        <td></td>
+    </tr>
+    <tr id="percentage">
+        <td></td>
+    </tr>
+</table>
 <script src="pro-congress-113-senate.js"></script>
 <script>
     document.getElementById("senate-data").innerHTML = JSON.stringify(data, null, 2);
