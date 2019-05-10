@@ -29,19 +29,19 @@ table.appendChild(row);
 for (i = 0; i < 10; i++) {
     var row = document.createElement("TR");
     row.setAttribute("border", "1");
-    
+
     var names = document.createElement("TD");
     var party = document.createElement("TD");
     var state = document.createElement("TD");
     var seniority = document.createElement("TD");
     var percentage = document.createElement("TD");
-    
-    names.innerHTML="ulj";
-    party.innerHTML="le";
-    state.innerHTML="mellem";
-    seniority.innerHTML="valamit";
-    percentage.innerHTML="mondok";
-    
+
+    names.innerHTML = "ulj";
+    party.innerHTML = "le";
+    state.innerHTML = "mellem";
+    seniority.innerHTML = "valamit";
+    percentage.innerHTML = "mondok";
+
     row.appendChild(names);
     row.appendChild(party);
     row.appendChild(state);
@@ -49,3 +49,8 @@ for (i = 0; i < 10; i++) {
     row.appendChild(percentage);
     table.appendChild(row);
 };
+
+
+for (i = 0; i < data.results[0].members.length; i++) {
+    console.log(data.results[0].members[i].last_name)
+}
