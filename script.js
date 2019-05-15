@@ -26,31 +26,21 @@ headerPercentage.innerHTML = "Percentage of Votes";
 row.appendChild(headerPercentage);
 table.appendChild(row);
 
-for (i = 0; i < 10; i++) {
+
+for (i = 0; i < data.results[0].members.length; i++) {
+
     var row = document.createElement("TR");
     row.setAttribute("border", "1");
 
     var names = document.createElement("TD");
-    var party = document.createElement("TD");
-    var state = document.createElement("TD");
-    var seniority = document.createElement("TD");
-    var percentage = document.createElement("TD");
+    if (data.results[0].members[i].middle_name === null) {
+        names.innerHTML = data.results[0].members[i].first_name + " " + data.results[0].members[i].last_name;
+    } else {
+        names.innerHTML = data.results[0].members[i].first_name + " " + data.results[0].members[i].middle_name + " " + data.results[0].members[i].last_name;
+    };
 
-    names.innerHTML = "ulj";
-    party.innerHTML = "le";
-    state.innerHTML = "mellem";
-    seniority.innerHTML = "valamit";
-    percentage.innerHTML = "mondok";
 
+    names.setAttribute("class", "tablenames");
     row.appendChild(names);
-    row.appendChild(party);
-    row.appendChild(state);
-    row.appendChild(seniority);
-    row.appendChild(percentage);
     table.appendChild(row);
-};
-
-
-for (i = 0; i < data.results[0].members.length; i++) {
-    console.log(data.results[0].members[i].last_name)
 }
