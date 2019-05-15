@@ -57,6 +57,17 @@ for (i = 0; i < data.results[0].members.length; i++) {
     table.appendChild(row);
     
     //Seniority
+    var seniorities = document.createElement("TD");
+    seniorities.innerHTML = data.results[0].members[i].seniority;
+    seniorities.setAttribute("class", "tablesseniorities");
+    row.appendChild(seniorities);
+    table.appendChild(row);
     
     //Vote percentage
+    var percentages = document.createElement("TD");
+    percentages.innerHTML = data.results[0].members[i].votes_with_party_pct;
+    percentages.setAttribute("class", "tablesseniorities");
+    row.appendChild(percentages);
+    table.appendChild(row);
+    
 }
