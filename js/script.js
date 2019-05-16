@@ -1,4 +1,5 @@
-var table = document.getElementById("table-data")
+//Senate Table Data____________________________________:
+var table = document.getElementById("senate-table-data")
 table.setAttribute("border", "1");
 var row = document.createElement("TR");
 var headerName = document.createElement("TH");
@@ -71,3 +72,5 @@ for (i = 0; i < data.results[0].members.length; i++) {
     table.appendChild(row);
 
 }
+
+//House Table Data____________________________________:
