@@ -1,6 +1,6 @@
 //Table Data____________________________________:
 var table = document.getElementById("table-data")
-table.setAttribute("border", "1");
+
 var row = document.createElement("TR");
 var headerName = document.createElement("TH");
 headerName.innerHTML = "Name";
