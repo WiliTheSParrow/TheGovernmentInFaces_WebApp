@@ -12,54 +12,62 @@
 
 <body>
     <div class="container">
-        <nav>
 
+        <div class="row">
             <div>
                 <a href="#">TGIF</a>
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li>
-                    <a href="#">Congress 113</a>
-                    <ul>
-                        <li><a href="#">Senate</a></li>
-                        <li><a href="#">House</a></li>
-                    </ul>
-                </li>
-            </ul>
+        </div>
 
+       <nav>
+ 
+            <div class="dropdown">
+                <button type="button">Home</button>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Congress 113<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Senate</a></li>
+                    <li><a href="#">House</a></li>
+                </ul>
+            </div>
+        
         </nav>
-
 
         <header>
             <div>
             </div>
         </header>
+
         <!--Table container-->
 
-        <div class="container2">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <h2>Senators</h2>
-                    <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
-                </div>
-                <div class="col-lg-6 col-sm-0"></div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <h2>Senators</h2>
+                <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
             </div>
+            <div class="col-lg-6 col-sm-0"></div>
         </div>
 
 
-
-        <div class="table table-striped">
-
-            <table id="table-data"></table>
-
-
-
+        <div class="row">
+            <div class="table table-striped">
+                <table id="table-data"></table>
+            </div>
         </div>
     </div>
 
-</body>
 
+    <footer class="align-middle">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-around">
+                    <div class="col-lg-3 col-md-6 col-sg-6 footer info ">
+                        <p id="footer">&copy; 2016 TGIF | All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 <script src="js/pro-congress-113-senate.js"></script>
 <script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

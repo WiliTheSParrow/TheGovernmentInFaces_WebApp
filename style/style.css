@@ -1,3 +1,7 @@
+@media only screen and (min-width : 1400px) {
+
+    .container { width: 20000px; }
+    
 .col-lg-6 {
     border: 3px solid red;
 }
@@ -11,3 +15,8 @@ table {
 nav {
     border: 3px solid red;
 }
+
+.footer{
+    display: inline-block;   
+}
+
