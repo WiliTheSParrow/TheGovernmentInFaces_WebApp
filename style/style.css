@@ -1,22 +1,26 @@
 @media only screen and (min-width : 1400px) {
 
-    .container { width: 20000px; }
-    
-.col-lg-6 {
-    border: 3px solid red;
-}
+    .container {
+        width: 20000px;
+    }
 
-table {
-    border: 3px solid red;
-    width: inherit;
-}
+    .col-lg-6 {
+        border: 3px solid red;
+    }
+
+    table {
+        border: 3px solid red;
+        width: inherit;
+    }
 
 
-nav {
-    border: 3px solid red;
-}
+    nav {
+        border: 3px solid red;
+        flex-flow: row;
+    }
 
-.footer{
-    display: inline-block;   
-}
+    .footer {
+        display: inline-block;
+    }
 
+   
