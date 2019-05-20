@@ -1,26 +1,48 @@
+/* HELPING BORDERS*/
+.col-lg-6 {
+    border: 3px solid red;
+}
+
+#aboutUs {
+    border: 3px solid red;
+}
+
+#tgifHomePicture {
+    border: 3px solid red;
+}
+
+#backgroundHistory {
+    border: 3px solid red;
+}
+
+footer {
+    border: 3px solid red;
+}
+
+#footer {
+    border: 3px solid red;
+}
+
+#logo {
+    border: 3px solid red;
+}
+
+#email {
+    border: 3px solid red;
+}
+
+table {
+    border: 3px solid red;
+    width: inherit;
+}
+
+nav {
+    border: 3px solid red;
+    flex-flow: row;
+}
+
 @media only screen and (min-width : 1400px) {
 
     .container {
         width: 20000px;
     }
-
-    .col-lg-6 {
-        border: 3px solid red;
-    }
-
-    table {
-        border: 3px solid red;
-        width: inherit;
-    }
-
-
-    nav {
-        border: 3px solid red;
-        flex-flow: row;
-    }
-
-    .footer {
-        display: inline-block;
-    }
-
-   
