@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -17,18 +17,23 @@
 
         <!--- HEADER PART WITH LOGO AND E-MAIL ICON -->
         <div class="row">
-            <div id="logo">
-                <img alt="TGIF logo image" src="img/tgif_logo2.png"></div>
-            <div class="col" id="email">E-mail</div>
+            <div id="logo" class="col-md-6 col-sm-6">
+                <img alt="TGIF logo image" class="img-fluid" src="img/tgif_logo4.png" >
+            </div>
+            <div id="email" class="col-md-6 col-sm-6">E-mail</div>
         </div>
 
         <!--- NAVIGATION BAR WITH DROPDOWN MENUS -->
         <div class="row">
             <nav class="navbar sticky-top navbar-expand-lg">
-                <ul class="navbar-nav">
+               
+                <ul class="nav nav-pills navbar-right">
+                   
                     <li class="nav-item active">
                         <a href="home.html" class="nav-link">Home</a>
                     </li>
+                    
+                   
                     <li class="nav-item dropdown">
                         <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropsown-toggle">Congress 113</a>
                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
@@ -36,29 +41,31 @@
                             <a href="senate-data.html" class="dropdown-item">Senate</a>
                         </div>
                     </li>
+                    
                 </ul>
+                
             </nav>
         </div>
 
-        <!--- -->
+        <!--- 
         <header>
             <div>
                 <p>https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment</p>
 
             </div>
         </header>
-
+        -->
         <!--- HOMEPAGE BODY PART I. ABOUT DESCR & PICTURE -->
         <div class="row">
-            <div class="col" id="aboutUs">
+            <div class="col-md-7 col-sm-9" id="aboutUs">
                 <h2>About Us</h2>
                 <p>Openness, accountability, and honesty define government transparency. In a free society, transparency is government's obligation to share information with citizens. It is at the heart of how citizens hold their public officials accountable. Here at TGIF we believe that government should be transparent.</p>
                 <p>Governments exist to serve the people. Information on how officials conduct the public business and spend taxpayer money must be readily available and easily understood. This transparency allows good and just governance. Transparency promotes accountability and provides information for citizens about what their Government is doing.</p>
                 <p>We also believe that government should be participatory. Public engagement enhances the Government's effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in society, and public officials benefit from having access to that dispersed knowledge. We invite you to use our site to become actively engaged in American government.</p>
                 <p>TGIF works to disclose information in forms that the public can readily find and use. We solicit public feedback to identify information of greatest use to the public.</p>
             </div>
-            <div class="col" id="tgifHomePicture">
-                <img alt="TGIF homepage picture" src="img/homepageimg.jpg">
+            <div class="col-md-5 col-sm-3 text-center" id="tgifHomePicture">
+                <img alt="TGIF homepage picture" src="img/homepageimg.jpg" class="img-fluid rounded-circle">
             </div>
         </div>
 
@@ -66,9 +73,9 @@
         <div class="row" id="moreInfo">
             <div class="col">
                 <a href="#backgroundHistory" class="btn btn-info" data-toggle="collapse">More about us</a>
-                
+
                 <div id="backgroundHistory" class="collapse">
-                   <br>
+                    <br>
                     <h3>Background History of Government Transparency</h3>
                     <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist doctrine of state secrecy, a core part of their intellectual project. The passage of formal legislative instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory) enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is strongly related to recent historiography on the eighteenth-century public sphere.
 
@@ -96,7 +103,8 @@
         </div>
     </footer>
 
-<script src="js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script></body></html>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body></html>
