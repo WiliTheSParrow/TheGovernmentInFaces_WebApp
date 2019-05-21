@@ -1,24 +1,44 @@
-body{
-    
+body {
     background: #81734d;
 }
 
-.container{
+.container {
     background: #ece0be;
     box-shadow: 10px 10px 15px;
 }
 
-#navigationBar{
+#navigationBar {
     background: #494a3c;
+    text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
 }
 
-#footer{
+#navigationBar a {
+    text-decoration: none;
+    color: #ece0be;
+}
+
+#aboutUs{
+    text-align: justify;
+    padding-top: 2%;
+}
+
+#backgroundHistory{
+    text-align: justify;
+    padding-bottom: 2%;
+}
+
+#moreAboutbtn{
+    background: #ece0be;
+    border: none;
+}
+
+#footer {
     background: #494a3c;
     color: #ece0be;
     text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
 }
 
-/* HELPING BORDERS*/
+/* HELPING BORDERS
 .col-lg-6 {
     border: 3px solid red;
 }
@@ -56,6 +76,8 @@ nav {
     border: 3px solid red;
     flex-flow: row;
 }
+
+*/
 
 @media only screen and (min-width : 1400px) {
 
