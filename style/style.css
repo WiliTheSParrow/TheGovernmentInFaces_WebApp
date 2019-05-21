@@ -1,5 +1,21 @@
 body{
+    
+    background: #81734d;
+}
+
+.container{
     background: #ece0be;
+    box-shadow: 10px 10px 15px;
+}
+
+#navigationBar{
+    background: #494a3c;
+}
+
+#footer{
+    background: #494a3c;
+    color: #ece0be;
+    text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
 }
 
 /* HELPING BORDERS*/
@@ -20,10 +36,6 @@ body{
 }
 
 footer {
-    border: 3px solid red;
-}
-
-#footer {
     border: 3px solid red;
 }
 
