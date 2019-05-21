@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-   <!--- LOADING: metadata, IE config, Bootstrap, CSS --->
+    <!--- LOADING: metadata, IE config, Bootstrap, CSS -->
     <title>TGIF-Home</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
     <div class="container">
 
-        <!--- HEADER PART WITH LOGO AND E-MAIL ICON --->
+        <!--- HEADER PART WITH LOGO AND E-MAIL ICON -->
         <div class="row">
             <div class="col" id="logo">
                 <a href="#">TGIF</a>
@@ -22,7 +23,7 @@
             <div class="col" id="email">E-mail</div>
         </div>
 
-        <!--- NAVIGATION BAR WITH DROPDOWN MENUS --->
+        <!--- NAVIGATION BAR WITH DROPDOWN MENUS -->
         <div class="row">
             <nav class="navbar sticky-top navbar-expand-lg">
                 <ul class="navbar-nav">
@@ -40,7 +41,7 @@
             </nav>
         </div>
 
-        <!--- --->
+        <!--- -->
         <header>
             <div>
                 <p>https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment</p>
@@ -48,7 +49,7 @@
             </div>
         </header>
 
-        <!--- HOMEPAGE BODY PART I. ABOUT DESCR & PICTURE --->
+        <!--- HOMEPAGE BODY PART I. ABOUT DESCR & PICTURE -->
         <div class="row">
             <div class="col" id="aboutUs">
                 <h2>About Us</h2>
@@ -62,23 +63,26 @@
             </div>
         </div>
 
-        <!--- HOMEPAGE BODY PART II. ACCORDION FEATURE --->
-        <div class="row">
-            <div class="col" id="backgroundHistory">
-                <h3>Background History of Government Transparency</h3>
-                <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist doctrine of state secrecy, a core part of their intellectual project. The passage of formal legislative instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory) enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is strongly related to recent historiography on the eighteenth-century public sphere.
+        <!--- HOMEPAGE BODY PART II. ACCORDION FEATURE -->
+        <div class="row" id="moreInfo">
+            <div class="col">
+                <a href="#backgroundHistory" class="btn btn-info" data-toggle="collapse">More about us</a>
+                <div id="backgroundHistory" class="collapse">
+                    <h3>Background History of Government Transparency</h3>
+                    <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist doctrine of state secrecy, a core part of their intellectual project. The passage of formal legislative instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory) enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is strongly related to recent historiography on the eighteenth-century public sphere.
 
-                    <p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789), freedom of the press enshrined provisions and requirements for public budgetary accounting and freedom of the press in constitutional articles. In the nineteenth century, attempts by Metternichean statesmen to row back on these measures were vigorously opposed by a number of eminent liberal politicians and writers, Bentham, Mill and Acton prominent among the latter.</p>
+                        <p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789), freedom of the press enshrined provisions and requirements for public budgetary accounting and freedom of the press in constitutional articles. In the nineteenth century, attempts by Metternichean statesmen to row back on these measures were vigorously opposed by a number of eminent liberal politicians and writers, Bentham, Mill and Acton prominent among the latter.</p>
 
-                    <p>Open government is widely seen to be a key hallmark of contemporary democratic practice and is often linked to the passing of freedom of information legislation. Scandinavian countries claim to have adopted the first freedom of information legislation, dating the origins of its modern provisions to the eighteenth century and Finland continuing the presumption of openness after gaining independence in 1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new legislation in 1999).</p>
+                        <p>Open government is widely seen to be a key hallmark of contemporary democratic practice and is often linked to the passing of freedom of information legislation. Scandinavian countries claim to have adopted the first freedom of information legislation, dating the origins of its modern provisions to the eighteenth century and Finland continuing the presumption of openness after gaining independence in 1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new legislation in 1999).</p>
 
-                    <p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to Information Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
+                        <p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to Information Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
+                </div>
             </div>
         </div>
 
     </div>
 
-   <!--- FOOTER --->
+    <!--- FOOTER -->
     <footer class="align-middle">
         <div class="footer-top">
             <div class="container">
@@ -90,12 +94,8 @@
             </div>
         </div>
     </footer>
-</body>
 
-<!--- LOADING: JS scripts, jQuery, Bootstrap --->
 <script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</html>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script></body></html>
