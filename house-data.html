@@ -16,19 +16,25 @@
 
         <!--- HEADER PART WITH LOGO AND E-MAIL ICON -->
         <div class="row">
-            <div class="col" id="logo">
-                <a href="#">TGIF</a>
-                <img alt="TGIF logo image" src="#"></div>
-            <div class="col" id="email">E-mail</div>
+            <div id="logo" class="col-md-6 col-sm-6">
+                <img alt="TGIF logo image" class="img-fluid" src="img/tgif_logo5.png">
+            </div>
+            <div id="email" class="col-md-6 col-sm-6">
+                <img alt="Email icon" class="img-fluid float-right" src="img/mail-icon.png">
+            </div>
         </div>
 
         <!--- NAVIGATION BAR WITH DROPDOWN MENUS -->
-        <div class="row">
+        <div id="navigationBar" class="row">
             <nav class="navbar sticky-top navbar-expand-lg">
-                <ul class="navbar-nav">
+
+                <ul class="nav nav-pills navbar-right">
+
                     <li class="nav-item active">
                         <a href="home.html" class="nav-link">Home</a>
                     </li>
+
+
                     <li class="nav-item dropdown">
                         <a href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropsown-toggle">Congress 113</a>
                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
@@ -36,49 +42,53 @@
                             <a href="senate-data.html" class="dropdown-item">Senate</a>
                         </div>
                     </li>
+
                 </ul>
+
             </nav>
         </div>
 
-        <!--- -->
+        <!--- 
         <header>
             <div>
+                <p>https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment</p>
+
             </div>
         </header>
-
+        -->
         <!--- HOMEPAGE BODY WITH HOUSE OF DATA TABLE -->
         <div class="row">
-            <div class="col-xlg-6 col-lg-6 col-sm-12">
+            <div class="col-md-7 col-sm-9" id="congressment">
                 <h2>Congressmen</h2>
                 <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
                 <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
             </div>
-            <div class="col-xlg-6 col-lg-6 col-sm-0"></div>
+            <div class="col-md-5 col-sm-3"></div>
         </div>
+        
         <div class="row">
             <div class="table table-striped">
                 <table id="table-data"></table>
             </div>
         </div>
-    </div>
 
-    <!--- FOOTER -->
-    <footer class="align-middle">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row justify-content-around">
-                    <div class="col-lg-3 col-md-6 col-sg-6 footer info ">
-                        <p id="footer">&copy; 2016 TGIF | All Rights Reserved</p>
+
+        <!--- FOOTER -->
+        <div class="row">
+            <div id="footer" class="col">
+                <footer class="page-footer font-small">
+                    <div class="footer-copyright text-center py-3">
+                        &copy; 2016 TGIF | All Rights Reserved
                     </div>
-                </div>
+                </footer>
             </div>
         </div>
-    </footer>
+    </div>
 
-
-<!--- LOADING: JSON, JS scripts, jQuery, Bootstrap -->
-<script src="js/pro-congress-113-house.js"></script>
-<script src="js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script></body></html>
+    <!--- LOADING: JSON, JS scripts, jQuery, Bootstrap -->
+    <script src="js/pro-congress-113-house.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body></html>

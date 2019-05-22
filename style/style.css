@@ -22,6 +22,11 @@ body {
     padding-top: 2%;
 }
 
+#congressment{
+    text-align: justify;
+    padding-top: 2%;
+}
+
 #backgroundHistory{
     text-align: justify;
     padding-bottom: 2%;
@@ -36,6 +41,12 @@ body {
     background: #494a3c;
     color: #ece0be;
     text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
+}
+
+#table-data{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
 }
 
 /* HELPING BORDERS
@@ -77,10 +88,11 @@ nav {
     flex-flow: row;
 }
 
-*/
-
 @media only screen and (min-width : 1400px) {
 
     .container {
         width: 20000px;
     }
+
+*/
+
