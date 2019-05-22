@@ -1,3 +1,8 @@
+#mailtext {
+    text-decoration: none;
+    color: black;
+}
+
 body {
     background: #81734d;
 }
@@ -26,6 +31,7 @@ body {
 #congressment{
     text-align: justify;
     padding-top: 2%;
+    margin-left: 2%;
 }
 
 #backgroundHistory{
@@ -55,10 +61,11 @@ table td {
     text-decoration: none;
 };
 
-#mailtext {
-    text-decoration: none;
-    color: black;
+.table-stripped td{
+     border-top: 1px solid #494a3c;
 }
+
+
 
 
 /* HELPING BORDERS
