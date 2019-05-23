@@ -34,6 +34,7 @@ for (i = 0; i < data.results[0].members.length; i++) {
     var row = document.createElement("TR");
     row.setAttribute("border", "1");
     var names = document.createElement("TD");
+    
     if (data.results[0].members[i].middle_name === null) {
         names.innerHTML = (data.results[0].members[i].first_name + " " + data.results[0].members[i].last_name).link(data.results[0].members[i].url);
     } else {
