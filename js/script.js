@@ -1,5 +1,26 @@
 // Filter_______________________________________:
+if (location.pathname == "/senate-data.html" || location.pathname == "/house-data.html") {
 
+    //-----------
+    // Pass the checkbox name to the function
+    function getCheckedBoxes(party) {
+        var checkboxes = document.getElementsByName(party);
+        var checkboxesChecked = [];
+        // loop over them all
+        for (var i = 0; i < checkboxes.length; i++) {
+            // And stick the checked ones onto an array...
+            if (checkboxes[i].checked) {
+                checkboxesChecked.push(checkboxes[i]);
+            }
+        }
+        // Return the array if it is non-empty, or null
+        return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+    }
+
+    // Call as
+    var checkedBoxes = getCheckedBoxes();
+
+};
 
 //Table Data____________________________________:
 var table = document.getElementById("table-data")
@@ -37,7 +58,7 @@ for (i = 0; i < data.results[0].members.length; i++) {
     var row = document.createElement("TR");
     row.setAttribute("border", "1");
     var names = document.createElement("TD");
-    
+
     if (data.results[0].members[i].middle_name === null) {
         names.innerHTML = (data.results[0].members[i].first_name + " " + data.results[0].members[i].last_name).link(data.results[0].members[i].url);
     } else {
