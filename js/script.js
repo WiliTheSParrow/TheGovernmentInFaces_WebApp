@@ -1,42 +1,23 @@
 // Filter the data_____________________________________
 
-console.log("Cicmó <3")
-var valamilyenValtozo = 13;
-
-function miAFaszVan() {
-    console.log(valamilyenValtozo);
-    console.log(checkboxD);
-};
-
-console.log(location.pathname);
 
 if (location.pathname == "/C:/Julia/Ubiqum/Web_App_for_TGIF/senate-data.html") {
-    console.log("HagymaFifi<3")
+
     //Event listener
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
     var checkboxI = document.getElementById("i_checkbox");
 
-    checkboxD.addEventListener("click", miAFaszVan);
+    checkboxD.addEventListener("click", getCheckedBoxes);
+    checkboxR.addEventListener("click", getCheckedBoxes);
+    checkboxI.addEventListener("click", getCheckedBoxes);
 };
 
 
-
-
-
-
-
-//checkboxR.addEventListener("click", getCheckedBoxes);
-//checkboxI.addEventListener("click", getCheckedBoxes);
-
 //getCheckedBoxes();
-
-
-
 
 // Get checked box values and put them into an array
 // Pass the checkbox name to the function
-/*
 function getCheckedBoxes() {
     var checkboxes = document.getElementsByName("party");
     var checkboxesChecked = [];
@@ -57,7 +38,7 @@ function getCheckedBoxes() {
 var checkedBoxes = getCheckedBoxes();
 // Check in console
 console.log(checkedBoxes);
-*/
+
 /*
 //Table Data____________________________________:
 var table = document.getElementById("table-data")
