@@ -1,26 +1,44 @@
 // Filter the data_____________________________________
 
+console.log("Cicmó <3")
+var valamilyenValtozo = 13;
 
-if (location.pathname == "/senate-data.html" || location.pathname == "/house-data.html") {
+function miAFaszVan() {
+    console.log(valamilyenValtozo);
+    console.log(checkboxD);
+};
 
+console.log(location.pathname);
+
+if (location.pathname == "/C:/Julia/Ubiqum/Web_App_for_TGIF/senate-data.html") {
+    console.log("HagymaFifi<3")
     //Event listener
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
     var checkboxI = document.getElementById("i_checkbox");
-    
-    checkboxD.addEventListener("click", getCheckedBoxes);
-    checkboxR.addEventListener("click", getCheckedBoxes);
-    checkboxI.addEventListener("click", getCheckedBoxes);
-    
-    getCheckedBoxes();
 
+    checkboxD.addEventListener("click", miAFaszVan);
 };
+
+
+
+
+
+
+
+//checkboxR.addEventListener("click", getCheckedBoxes);
+//checkboxI.addEventListener("click", getCheckedBoxes);
+
+//getCheckedBoxes();
+
+
 
 
 // Get checked box values and put them into an array
 // Pass the checkbox name to the function
-function getCheckedBoxes(name="party") {
-    var checkboxes = document.getElementsByName(name="party");
+/*
+function getCheckedBoxes() {
+    var checkboxes = document.getElementsByName("party");
     var checkboxesChecked = [];
     // loop over them all
     for (var i = 0; i < checkboxes.length; i++) {
@@ -39,7 +57,8 @@ function getCheckedBoxes(name="party") {
 var checkedBoxes = getCheckedBoxes();
 // Check in console
 console.log(checkedBoxes);
-
+*/
+/*
 //Table Data____________________________________:
 var table = document.getElementById("table-data")
 
@@ -115,3 +134,4 @@ for (i = 0; i < data.results[0].members.length; i++) {
     table.appendChild(row);
 
 }
+*/
