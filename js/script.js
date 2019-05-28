@@ -1,26 +1,44 @@
-// Filter_______________________________________:
+// Filter the data_____________________________________
+
+
 if (location.pathname == "/senate-data.html" || location.pathname == "/house-data.html") {
 
-    //-----------
-    // Pass the checkbox name to the function
-    function getCheckedBoxes(party) {
-        var checkboxes = document.getElementsByName(party);
-        var checkboxesChecked = [];
-        // loop over them all
-        for (var i = 0; i < checkboxes.length; i++) {
-            // And stick the checked ones onto an array...
-            if (checkboxes[i].checked) {
-                checkboxesChecked.push(checkboxes[i]);
-            }
-        }
-        // Return the array if it is non-empty, or null
-        return checkboxesChecked.length > 0 ? checkboxesChecked : null;
-    }
-
-    // Call as
-    var checkedBoxes = getCheckedBoxes();
+    //Event listener
+    var checkboxD = document.getElementById("d_checkbox");
+    var checkboxR = document.getElementById("r_checkbox");
+    var checkboxI = document.getElementById("i_checkbox");
+    
+    checkboxD.addEventListener("click", getCheckedBoxes);
+    checkboxR.addEventListener("click", getCheckedBoxes);
+    checkboxI.addEventListener("click", getCheckedBoxes);
+    
+    getCheckedBoxes();
 
 };
+
+
+// Get checked box values and put them into an array
+// Pass the checkbox name to the function
+function getCheckedBoxes(name="party") {
+    var checkboxes = document.getElementsByName(name="party");
+    var checkboxesChecked = [];
+    // loop over them all
+    for (var i = 0; i < checkboxes.length; i++) {
+        // And stick the checked ones onto an array...
+        if (checkboxes[i].checked) {
+            checkboxesChecked.push(checkboxes[i]);
+        }
+    }
+    
+    // Return the array if it is non-empty, or null
+    return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+}
+
+
+// Call as
+var checkedBoxes = getCheckedBoxes();
+// Check in console
+console.log(checkedBoxes);
 
 //Table Data____________________________________:
 var table = document.getElementById("table-data")
