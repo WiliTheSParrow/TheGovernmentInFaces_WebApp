@@ -30,16 +30,28 @@ function checkedData() {
         if (checkboxI.checked === true && members[i].party == "I") {
             checkedDataArray.push(members[i]);
         }
+        if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
+            checkedDataArray.push(members[i]);
+        }
     }
-    makeTableData(checkedDataArray);
+    if (checkedDataArray == "") {
+        noMatch();
+    } else {
+        makeTableData(checkedDataArray);
+    }
+}
+
+function noMatch() {
+    var table = document.getElementById("table-data");
+    table.innerHTML = "No matches found.";
 }
 
 //Table____________________________________:
 function makeTableData(checkedDataArray) {
     // Where the table takes place in the HTML:
     var table = document.getElementById("table-data");
-    table.innerHTML="";
-    
+    table.innerHTML = "";
+
     //Header:
     var row = document.createElement("TR");
 
