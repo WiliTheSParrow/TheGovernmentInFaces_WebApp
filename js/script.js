@@ -1,6 +1,4 @@
 // Filter the data_____________________________________
-
-console.log(location.pathname)
 if (location.pathname == "/senate-data.html") {
 
     var members = data.results[0].members;
@@ -58,7 +56,7 @@ console.log(checkedBoxes);
 */
 
 
-/*
+
 //Table Data____________________________________:
 var table = document.getElementById("table-data")
 
@@ -89,17 +87,17 @@ row.appendChild(headerPercentage);
 table.appendChild(row);
 
 
-for (i = 0; i < data.results[0].members.length; i++) {
+for (i = 0; i < members.length; i++) {
 
     //Names
     var row = document.createElement("TR");
     row.setAttribute("border", "1");
     var names = document.createElement("TD");
 
-    if (data.results[0].members[i].middle_name === null) {
-        names.innerHTML = (data.results[0].members[i].first_name + " " + data.results[0].members[i].last_name).link(data.results[0].members[i].url);
+    if (members[i].middle_name === null) {
+        names.innerHTML = (members[i].first_name + " " + members[i].last_name).link(members[i].url);
     } else {
-        names.innerHTML = (data.results[0].members[i].first_name + " " + data.results[0].members[i].middle_name + " " + data.results[0].members[i].last_name).link(data.results[0].members[i].url);
+        names.innerHTML = (members[i].first_name + " " + members[i].middle_name + " " + members[i].last_name).link(members[i].url);
     };
     names.setAttribute("class", "tablenames");
     row.appendChild(names);
@@ -107,31 +105,30 @@ for (i = 0; i < data.results[0].members.length; i++) {
 
     //Parties
     var parties = document.createElement("TD");
-    parties.innerHTML = data.results[0].members[i].party;
+    parties.innerHTML = members[i].party;
     parties.setAttribute("class", "tableparties");
     row.appendChild(parties);
     table.appendChild(row);
 
     //State
     var states = document.createElement("TD");
-    states.innerHTML = data.results[0].members[i].state;
+    states.innerHTML = members[i].state;
     states.setAttribute("class", "tablestates");
     row.appendChild(states);
     table.appendChild(row);
 
     //Seniority
     var seniorities = document.createElement("TD");
-    seniorities.innerHTML = data.results[0].members[i].seniority;
+    seniorities.innerHTML = members[i].seniority;
     seniorities.setAttribute("class", "tablesseniorities");
     row.appendChild(seniorities);
     table.appendChild(row);
 
     //Vote percentage
     var percentages = document.createElement("TD");
-    percentages.innerHTML = data.results[0].members[i].votes_with_party_pct;
+    percentages.innerHTML = members[i].votes_with_party_pct;
     percentages.setAttribute("class", "tablesseniorities");
     row.appendChild(percentages);
     table.appendChild(row);
 
 }
-*/
