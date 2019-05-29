@@ -1,4 +1,4 @@
-// Filter the data_____________________________________
+// Checkbox event listener_____________________________________:
 if (location.pathname == "/senate-data.html") {
 
     var members = data.results[0].members;
@@ -11,124 +11,108 @@ if (location.pathname == "/senate-data.html") {
     checkboxR.addEventListener("click", checkedData);
     checkboxI.addEventListener("click", checkedData);
 
-    //checkedData();
+    checkedData();
+
 }
 
-// Function for generating the table regarding the checkboxes:
+// Filtering data regarding checkboxes:
 
 function checkedData() {
     var checkedDataArray = [];
 
-    for (var i=0; i<members.length; i++) {
+    for (var i = 0; i < members.length; i++) {
         if (checkboxD.checked === true && members[i].party == "D") {
-            checkedDataArray.push(members[i]);            
-        }
-        if (checkboxR.checked === true && members[i].party=="R") {
             checkedDataArray.push(members[i]);
         }
-        if (checkboxI.checked === true && members[i].party=="I") {
+        if (checkboxR.checked === true && members[i].party == "R") {
             checkedDataArray.push(members[i]);
-        }     
+        }
+        if (checkboxI.checked === true && members[i].party == "I") {
+            checkedDataArray.push(members[i]);
+        }
     }
-    console.log(checkedDataArray);
+    makeTableData(checkedDataArray);
 }
 
-/*
-// Get checked box values and put them into an array
-// Pass the checkbox name to the function
-function getCheckedBoxes() {
-    var checkboxes = document.getElementsByName("party");
-    var checkboxesChecked = [];
-    // loop over them all
-    for (var i = 0; i < checkboxes.length; i++) {
-        // And stick the checked ones onto an array...
-        if (checkboxes[i].checked) {
-            checkboxesChecked.push(checkboxes[i]);
-        }
-    }   
-    // Return the array if it is non-empty, or null
-    return checkboxesChecked.length > 0 ? checkboxesChecked : null;
-}
-// Call as
-var checkedBoxes = getCheckedBoxes();
-// Check in console
-console.log(checkedBoxes);
-*/
-
-
-
-//Table Data____________________________________:
-var table = document.getElementById("table-data")
-
-var row = document.createElement("TR");
-var headerName = document.createElement("TH");
-headerName.innerHTML = "Name";
-row.appendChild(headerName);
-table.appendChild(row);
-
-var headerParty = document.createElement("TH");
-headerParty.innerHTML = "Party Affiliation";
-row.appendChild(headerParty);
-table.appendChild(row);
-
-var headerState = document.createElement("TH");
-headerState.innerHTML = "State";
-row.appendChild(headerState);
-table.appendChild(row);
-
-var headerSeniority = document.createElement("TH");
-headerSeniority.innerHTML = "Seniority";
-row.appendChild(headerSeniority);
-table.appendChild(row);
-
-var headerPercentage = document.createElement("TH");
-headerPercentage.innerHTML = "Percentage of Votes";
-row.appendChild(headerPercentage);
-table.appendChild(row);
-
-
-for (i = 0; i < members.length; i++) {
-
-    //Names
+//Table____________________________________:
+function makeTableData(checkedDataArray) {
+    // Where the table takes place in the HTML:
+    var table = document.getElementById("table-data");
+    table.innerHTML="";
+    
+    //Header:
     var row = document.createElement("TR");
-    row.setAttribute("border", "1");
-    var names = document.createElement("TD");
 
-    if (members[i].middle_name === null) {
-        names.innerHTML = (members[i].first_name + " " + members[i].last_name).link(members[i].url);
-    } else {
-        names.innerHTML = (members[i].first_name + " " + members[i].middle_name + " " + members[i].last_name).link(members[i].url);
-    };
-    names.setAttribute("class", "tablenames");
-    row.appendChild(names);
+    var headerName = document.createElement("TH");
+    headerName.innerHTML = "Name";
+    row.appendChild(headerName);
     table.appendChild(row);
 
-    //Parties
-    var parties = document.createElement("TD");
-    parties.innerHTML = members[i].party;
-    parties.setAttribute("class", "tableparties");
-    row.appendChild(parties);
+    var headerParty = document.createElement("TH");
+    headerParty.innerHTML = "Party Affiliation";
+    row.appendChild(headerParty);
     table.appendChild(row);
 
-    //State
-    var states = document.createElement("TD");
-    states.innerHTML = members[i].state;
-    states.setAttribute("class", "tablestates");
-    row.appendChild(states);
+    var headerState = document.createElement("TH");
+    headerState.innerHTML = "State";
+    row.appendChild(headerState);
     table.appendChild(row);
 
-    //Seniority
-    var seniorities = document.createElement("TD");
-    seniorities.innerHTML = members[i].seniority;
-    seniorities.setAttribute("class", "tablesseniorities");
-    row.appendChild(seniorities);
+    var headerSeniority = document.createElement("TH");
+    headerSeniority.innerHTML = "Seniority";
+    row.appendChild(headerSeniority);
     table.appendChild(row);
 
-    //Vote percentage
-    var percentages = document.createElement("TD");
-    percentages.innerHTML = members[i].votes_with_party_pct;
-    percentages.setAttribute("class", "tablesseniorities");
-    row.appendChild(percentages);
+    var headerPercentage = document.createElement("TH");
+    headerPercentage.innerHTML = "Percentage of Votes";
+    row.appendChild(headerPercentage);
     table.appendChild(row);
 
+    //Data:
+
+    for (i = 0; i < checkedDataArray.length; i++) {
+
+        //Names
+        var row = document.createElement("TR");
+        row.setAttribute("border", "1");
+        var names = document.createElement("TD");
+
+        if (checkedDataArray[i].middle_name === null) {
+            names.innerHTML = (checkedDataArray[i].first_name + " " + checkedDataArray[i].last_name).link(checkedDataArray[i].url);
+        } else {
+            names.innerHTML = (checkedDataArray[i].first_name + " " + checkedDataArray[i].middle_name + " " + checkedDataArray[i].last_name).link(checkedDataArray[i].url);
+        };
+        names.setAttribute("class", "tablenames");
+        row.appendChild(names);
+        table.appendChild(row);
+
+        //Parties
+        var parties = document.createElement("TD");
+        parties.innerHTML = checkedDataArray[i].party;
+        parties.setAttribute("class", "tableparties");
+        row.appendChild(parties);
+        table.appendChild(row);
+
+        //State
+        var states = document.createElement("TD");
+        states.innerHTML = checkedDataArray[i].state;
+        states.setAttribute("class", "tablestates");
+        row.appendChild(states);
+        table.appendChild(row);
+
+        //Seniority
+        var seniorities = document.createElement("TD");
+        seniorities.innerHTML = checkedDataArray[i].seniority;
+        seniorities.setAttribute("class", "tablesseniorities");
+        row.appendChild(seniorities);
+        table.appendChild(row);
+
+        //Vote percentage
+        var percentages = document.createElement("TD");
+        percentages.innerHTML = checkedDataArray[i].votes_with_party_pct;
+        percentages.setAttribute("class", "tablesseniorities");
+        row.appendChild(percentages);
+        table.appendChild(row);
+
+    }
 }
