@@ -1,12 +1,16 @@
-// Checkbox event listener_____________________________________:
-if (location.pathname == "/senate-data.html") {
+//GENERATING THE TABLE FROM DATA:
+
+//Checkbox event listener___________________________________________
+if (location.pathname == "/senate-data.html" || location.pathname == "/house-data.html") {
 
     var members = data.results[0].members;
-    //Event listener
+    var states = document.getElementById("states");
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
     var checkboxI = document.getElementById("i_checkbox");
 
+    //Event listener
+    states.addEventListener("click", checkedData);
     checkboxD.addEventListener("click", checkedData);
     checkboxR.addEventListener("click", checkedData);
     checkboxI.addEventListener("click", checkedData);
@@ -15,23 +19,24 @@ if (location.pathname == "/senate-data.html") {
 
 }
 
-// Filtering data regarding checkboxes:
-
+//Filtering data regarding checkboxes & dropdown menu_______________
 function checkedData() {
     var checkedDataArray = [];
 
     for (var i = 0; i < members.length; i++) {
-        if (checkboxD.checked === true && members[i].party == "D") {
-            checkedDataArray.push(members[i]);
-        }
-        if (checkboxR.checked === true && members[i].party == "R") {
-            checkedDataArray.push(members[i]);
-        }
-        if (checkboxI.checked === true && members[i].party == "I") {
-            checkedDataArray.push(members[i]);
-        }
-        if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
-            checkedDataArray.push(members[i]);
+        if (states.value == members[i].state || states.value == "All") {
+            if (checkboxD.checked === true && members[i].party == "D") {
+                checkedDataArray.push(members[i]);
+            }
+            if (checkboxR.checked === true && members[i].party == "R") {
+                checkedDataArray.push(members[i]);
+            }
+            if (checkboxI.checked === true && members[i].party == "I") {
+                checkedDataArray.push(members[i]);
+            }
+            if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
+                checkedDataArray.push(members[i]);
+            }
         }
     }
     if (checkedDataArray == "") {
@@ -46,8 +51,9 @@ function noMatch() {
     table.innerHTML = "No matches found.";
 }
 
-//Table____________________________________:
+//Makin the table___________________________________________________
 function makeTableData(checkedDataArray) {
+
     // Where the table takes place in the HTML:
     var table = document.getElementById("table-data");
     table.innerHTML = "";
@@ -80,10 +86,8 @@ function makeTableData(checkedDataArray) {
     row.appendChild(headerPercentage);
     table.appendChild(row);
 
-    //Data:
-
+    //Where the magic happens:
     for (i = 0; i < checkedDataArray.length; i++) {
-
         //Names
         var row = document.createElement("TR");
         row.setAttribute("border", "1");

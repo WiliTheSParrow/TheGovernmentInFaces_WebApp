@@ -4,7 +4,7 @@
 }
 
 .table-stripped th{
-     border-top: 1px solid #494a3c;
+    border-top: 1px solid #494a3c;
     background: #494a3c !important;
     color: #ece0be;
     text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
