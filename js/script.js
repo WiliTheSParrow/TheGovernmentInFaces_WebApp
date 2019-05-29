@@ -1,21 +1,32 @@
 // Filter the data_____________________________________
 
-
-if (location.pathname == "/C:/Julia/Ubiqum/Web_App_for_TGIF/senate-data.html") {
+console.log(location.pathname)
+if (location.pathname == "/senate-data.html") {
 
     //Event listener
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
     var checkboxI = document.getElementById("i_checkbox");
 
-    checkboxD.addEventListener("click", getCheckedBoxes);
-    checkboxR.addEventListener("click", getCheckedBoxes);
-    checkboxI.addEventListener("click", getCheckedBoxes);
+    checkboxD.addEventListener("click", checkedData);
+    checkboxR.addEventListener("click", checkedData);
+    checkboxI.addEventListener("click", checkedData);
+    
+    //checkedData();
+};
+
+// Function for generating the table regarding the checkboxes:
+
+function checkedData(){
+    var checkedDataArray = [];
+    if(checkboxD.checked === true){
+       console.log("klikk!2");
+       }
+    
 };
 
 
-//getCheckedBoxes();
-
+/*
 // Get checked box values and put them into an array
 // Pass the checkbox name to the function
 function getCheckedBoxes() {
@@ -27,17 +38,16 @@ function getCheckedBoxes() {
         if (checkboxes[i].checked) {
             checkboxesChecked.push(checkboxes[i]);
         }
-    }
-    
+    }   
     // Return the array if it is non-empty, or null
     return checkboxesChecked.length > 0 ? checkboxesChecked : null;
 }
-
-
 // Call as
 var checkedBoxes = getCheckedBoxes();
 // Check in console
 console.log(checkedBoxes);
+*/
+
 
 /*
 //Table Data____________________________________:
