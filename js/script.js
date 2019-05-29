@@ -3,6 +3,7 @@
 console.log(location.pathname)
 if (location.pathname == "/senate-data.html") {
 
+    var members = data.results[0].members;
     //Event listener
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
@@ -11,20 +12,28 @@ if (location.pathname == "/senate-data.html") {
     checkboxD.addEventListener("click", checkedData);
     checkboxR.addEventListener("click", checkedData);
     checkboxI.addEventListener("click", checkedData);
-    
+
     //checkedData();
-};
+}
 
 // Function for generating the table regarding the checkboxes:
 
-function checkedData(){
+function checkedData() {
     var checkedDataArray = [];
-    if(checkboxD.checked === true){
-       console.log("klikk!2");
-       }
-    
-};
 
+    for (var i=0; i<members.length; i++) {
+        if (checkboxD.checked === true && members[i].party == "D") {
+            checkedDataArray.push(members[i]);            
+        }
+        if (checkboxR.checked === true && members[i].party=="R") {
+            checkedDataArray.push(members[i]);
+        }
+        if (checkboxI.checked === true && members[i].party=="I") {
+            checkedDataArray.push(members[i]);
+        }     
+    }
+    console.log(checkedDataArray);
+}
 
 /*
 // Get checked box values and put them into an array
