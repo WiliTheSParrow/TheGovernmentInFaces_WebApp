@@ -3,7 +3,7 @@ var members = data.results[0].members;
 //GENERATING THE TABLE FROM DATA:
 
 //Checkbox event listener___________________________________________
-if (location.pathname == "/senate-data.html" || 
+if (location.pathname == "/senate-data.html" ||
     location.pathname == "/house-data.html") {
 
 
@@ -139,15 +139,28 @@ function makeTableData(checkedDataArray) {
 // DATA STATISTICS:
 
 if (location.pathname == "/senate_attendance.html" ||
-   location.pathname == "/senate_loyalty.html") {
+    location.pathname == "/senate_loyalty.html") {
 
-    var statistics = document.getElementById("statisticsScript");
-    statistics.innerHTML = "";
+    var statistics = {
+        "totalOfParties": 0,
+        "numberOfDemocrats": 0,
+        "numberOfRepublicants": 0,
+        "numberOfIndependents": 0,
+        "bottomLoyalty": 0,
+        "topLoyalty": 0,
+        "bottomAttendance": 0,
+        "topAttendance": 0
+    };
 
-    noParties = [];
-    noDemocrats = [];
-    noRepublicans = [];
-    noIndependent = [];
+    dataStatistics();
+}
+
+
+function dataStatistics() {
+    var noParties = [];
+    var noDemocrats = [];
+    var noRepublicans = [];
+    var noIndependent = [];
 
     for (var i = 0; i < members.length; i++) {
 
