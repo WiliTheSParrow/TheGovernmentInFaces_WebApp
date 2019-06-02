@@ -1,9 +1,10 @@
-//GENERATING THE TABLE FROM DATA:
-
 var members = data.results[0].members;
 
+//GENERATING THE TABLE FROM DATA:
+
 //Checkbox event listener___________________________________________
-if (location.pathname == "/senate-data.html" || location.pathname == "/house-data.html") {
+if (location.pathname == "/senate-data.html" || 
+    location.pathname == "/house-data.html") {
 
 
     var states = document.getElementById("states");
@@ -137,9 +138,10 @@ function makeTableData(checkedDataArray) {
 
 // DATA STATISTICS:
 
-if (location.pathname == "/senate_attendance.html") {
+if (location.pathname == "/senate_attendance.html" ||
+   location.pathname == "/senate_loyalty.html") {
 
-    var statistics = document.getElementById("senateAttendanceScript");
+    var statistics = document.getElementById("statisticsScript");
     statistics.innerHTML = "";
 
     noParties = [];
