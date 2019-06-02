@@ -1,9 +1,11 @@
 //GENERATING THE TABLE FROM DATA:
 
+var members = data.results[0].members;
+
 //Checkbox event listener___________________________________________
 if (location.pathname == "/senate-data.html" || location.pathname == "/house-data.html") {
 
-    var members = data.results[0].members;
+
     var states = document.getElementById("states");
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
@@ -131,4 +133,43 @@ function makeTableData(checkedDataArray) {
         table.appendChild(row);
 
     }
+}
+
+// DATA STATISTICS:
+
+if (location.pathname == "/senate_attendance.html") {
+
+    var statistics = document.getElementById("senateAttendanceScript");
+    statistics.innerHTML = "";
+
+    noParties = [];
+    noDemocrats = [];
+    noRepublicans = [];
+    noIndependent = [];
+
+    for (var i = 0; i < members.length; i++) {
+
+        noParties.push(members[i]);
+        if (members[i].party == "D") {
+            noDemocrats.push(members[i]);
+        }
+        if (members[i].party == "R") {
+            noRepublicans.push(members[i]);
+        }
+        if (members[i].party == "I") {
+            noIndependent.push(members[i]);
+        }
+    }
+
+    var totalOfParties = statistics.totalOfParties = noParties.length;
+    var numberOfDemocrats = statistics.numberOfDemocrats = noDemocrats.length;
+    var numberOfRepublicans = statistics.numberOfRepublicants = noRepublicans.length;
+    var numberOfIndependents = statistics.numberOfIndependents = noIndependent.length;
+
+    console.log("From script:")
+    console.log(totalOfParties);
+    console.log(numberOfDemocrats);
+    console.log(numberOfRepublicans);
+    console.log(numberOfIndependents);
+
 }
