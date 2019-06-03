@@ -145,19 +145,26 @@ if (location.pathname != "/senate-data.html" &&
     var noRepublicans = [];
     var noIndependent = [];
     var result = 0;
+    var resultD = 0;
+    var resultR = 0;
+    var resultI = 0;
 
     for (var i = 0; i < members.length; i++) {
 
         noParties.push(members[i]);
+        result += members[i].votes_with_party_pct;
+        
         if (members[i].party == "D") {
             noDemocrats.push(members[i]);
-            result += members[i].votes_with_party_pct;
+            resultD += members[i].votes_with_party_pct;
         }
         if (members[i].party == "R") {
             noRepublicans.push(members[i]);
+            resultR += members[i].votes_with_party_pct;
         }
         if (members[i].party == "I") {
             noIndependent.push(members[i]);
+            resultI += members[i].votes_with_party_pct;
         }
 
     }
@@ -168,17 +175,17 @@ if (location.pathname != "/senate-data.html" &&
         "numberOfDemocrats": noDemocrats.length,
         "numberOfRepublicans": noRepublicans.length,
         "numberOfIndependents": noIndependent.length,
-        "votesWPartyD": 0,
-        "votesWPartyR": 0,
-        "votesWPartyI": 0,
+        "votesWPartyD": (resultD /= noDemocrats.length).toFixed(2),
+        "votesWPartyR": (resultR /= noRepublicans.length).toFixed(2),
+        "votesWPartyI": (resultI /= noIndependent.length).toFixed(2),
+        "totalvotedWParty": (result /= noParties.length).toFixed(2),
         "bottomLoyalty": 0,
         "topLoyalty": 0,
         "bottomAttendance": 0,
         "topAttendance": 0
     };
 
-    var osztas = result /= statistics.numberOfDemocrats;
-    console.log(osztas.toFixed(2));
+
 
     console.log(JSON.stringify(statistics));
 }
