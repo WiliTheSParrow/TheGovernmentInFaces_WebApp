@@ -1,7 +1,5 @@
-var members = data.results[0].members;
-
 //GENERATING THE TABLE FROM DATA:
-
+var members = data.results[0].members;
 //Checkbox event listener___________________________________________
 if (location.pathname == "/senate-data.html" ||
     location.pathname == "/house-data.html") {
@@ -138,25 +136,12 @@ function makeTableData(checkedDataArray) {
 
 // DATA STATISTICS:
 
-if (location.pathname == "/senate_attendance.html" ||
-    location.pathname == "/senate_loyalty.html") {
+if (location.pathname != "/senate-data.html" &&
+    location.pathname != "/house-data.html" &&
+    location.pathname != "/home.html") {
 
-    var statistics = {
-        "totalOfParties": 0,
-        "numberOfDemocrats": 0,
-        "numberOfRepublicants": 0,
-        "numberOfIndependents": 0,
-        "bottomLoyalty": 0,
-        "topLoyalty": 0,
-        "bottomAttendance": 0,
-        "topAttendance": 0
-    };
+    
 
-    dataStatistics();
-}
-
-
-function dataStatistics() {
     var noParties = [];
     var noDemocrats = [];
     var noRepublicans = [];
@@ -176,15 +161,21 @@ function dataStatistics() {
         }
     }
 
-    var totalOfParties = statistics.totalOfParties = noParties.length;
-    var numberOfDemocrats = statistics.numberOfDemocrats = noDemocrats.length;
-    var numberOfRepublicans = statistics.numberOfRepublicants = noRepublicans.length;
-    var numberOfIndependents = statistics.numberOfIndependents = noIndependent.length;
-
+    var statistics = {
+        "totalOfParties": noParties.length,
+        "numberOfDemocrats": noDemocrats.length,
+        "numberOfRepublicans": noRepublicans.length,
+        "numberOfIndependents": noIndependent.length,
+        "bottomLoyalty": 0,
+        "topLoyalty": 0,
+        "bottomAttendance": 0,
+        "topAttendance": 0
+    };
+    
     console.log("From script:")
-    console.log(totalOfParties);
-    console.log(numberOfDemocrats);
-    console.log(numberOfRepublicans);
-    console.log(numberOfIndependents);
+    console.log(statistics.totalOfParties);
+    console.log(statistics.numberOfDemocrats);
+    console.log(statistics.numberOfRepublicans);
+    console.log(statistics.numberOfIndependents);
 
 }
