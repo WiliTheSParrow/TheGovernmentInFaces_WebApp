@@ -140,18 +140,18 @@ if (location.pathname != "/senate-data.html" &&
     location.pathname != "/house-data.html" &&
     location.pathname != "/home.html") {
 
-    
-
     var noParties = [];
     var noDemocrats = [];
     var noRepublicans = [];
     var noIndependent = [];
+    var result = 0;
 
     for (var i = 0; i < members.length; i++) {
 
         noParties.push(members[i]);
         if (members[i].party == "D") {
             noDemocrats.push(members[i]);
+            result += members[i].votes_with_party_pct;
         }
         if (members[i].party == "R") {
             noRepublicans.push(members[i]);
@@ -159,23 +159,26 @@ if (location.pathname != "/senate-data.html" &&
         if (members[i].party == "I") {
             noIndependent.push(members[i]);
         }
+
     }
+
 
     var statistics = {
         "totalOfParties": noParties.length,
         "numberOfDemocrats": noDemocrats.length,
         "numberOfRepublicans": noRepublicans.length,
         "numberOfIndependents": noIndependent.length,
+        "votesWPartyD": 0,
+        "votesWPartyR": 0,
+        "votesWPartyI": 0,
         "bottomLoyalty": 0,
         "topLoyalty": 0,
         "bottomAttendance": 0,
         "topAttendance": 0
     };
-    
-    console.log("From script:")
-    console.log(statistics.totalOfParties);
-    console.log(statistics.numberOfDemocrats);
-    console.log(statistics.numberOfRepublicans);
-    console.log(statistics.numberOfIndependents);
 
+    var osztas = result /= statistics.numberOfDemocrats;
+    console.log(osztas.toFixed(2));
+
+    console.log(JSON.stringify(statistics));
 }
