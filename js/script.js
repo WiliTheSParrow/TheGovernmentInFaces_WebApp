@@ -188,22 +188,31 @@ if (location.pathname != "/senate-data.html" &&
 
 
     console.log(JSON.stringify(statistics));
-};
+
+    // Sorting the array for vote percentage least:
+    var membersVotesLeastParty = [...members].sort(function (a, b) {
+        return a.votes_with_party_pct - b.votes_with_party_pct
+    });
+    // Sorting the array for vote percentage least:
+    var membersVotesMostParty = [...members].sort(function (a, b) {
+        return b.votes_with_party_pct - a.votes_with_party_pct
+    });
+
+
+
+
+
+if (location.pathname == "/senate_loyalty.html") {
+    console.log(tenPercentCalc(membersVotesLeastParty, "votes_with_party_pct"));
+    console.log(tenPercentCalc(membersVotesMostParty, "votes_with_party_pct"));
+};};
 
 // Members who least often vote with their party:
-
-// Sorting the array:
-var membersVotesLeastParty = [...members].sort(function (a, b) {
-    return a.votes_with_party_pct - b.votes_with_party_pct
-});
-
-function leastLoyalParty(array, key) {
+function tenPercentCalc(array, key) {
     var sortedArray = [];
     array.sort(function (a, b) {
         return a - b
     });
-
-
     for (var i = 0; i < array.length; i++) {
         if (i < array.length / 10) {
             sortedArray.push(array[i]);
@@ -214,7 +223,4 @@ function leastLoyalParty(array, key) {
         };
     };
     return sortedArray
-
-}
-
-console.log(leastLoyalParty(membersVotesLeastParty, "votes_with_party_pct"));
+};
