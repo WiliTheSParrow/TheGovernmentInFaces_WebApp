@@ -189,3 +189,28 @@ if (location.pathname != "/senate-data.html" &&
 
     console.log(JSON.stringify(statistics));
 }
+
+var array = [100,55,88,88,99,888,999,1000,55,66];
+var sortedArray = [];
+
+console.log(array);
+console.log(array.length);
+
+function leastLoyalParty(array){
+  array.sort(function(a, b){return a - b});
+  console.log(array);
+  
+  for (var i=0; i < array.length; i++){
+    if (i < array.length/10){
+      sortedArray.push(array[i]);
+    }else if (array[i]==array[i-1]){
+      sortedArray.push(array[i]);
+    }else{
+      break;
+    };
+  };
+  return sortedArray
+  console.log(sortedArray);
+}
+
+leastLoyalParty(array);
