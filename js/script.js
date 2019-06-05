@@ -196,9 +196,9 @@ var sortedArray = [];
 console.log(array);
 console.log(array.length);
 
-function leastLoyalParty(array){
+function leastLoyalParty(){
   array.sort(function(a, b){return a - b});
-  console.log(array);
+   
   
   for (var i=0; i < array.length; i++){
     if (i < array.length/10){
@@ -210,7 +210,7 @@ function leastLoyalParty(array){
     };
   };
   return sortedArray
-  console.log(sortedArray);
+  
 }
 
-leastLoyalParty(array);
+console.log(leastLoyalParty());
