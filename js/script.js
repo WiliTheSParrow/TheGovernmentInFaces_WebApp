@@ -153,7 +153,7 @@ if (location.pathname != "/senate-data.html" &&
 
         noParties.push(members[i]);
         result += members[i].votes_with_party_pct;
-        
+
         if (members[i].party == "D") {
             noDemocrats.push(members[i]);
             resultD += members[i].votes_with_party_pct;
@@ -188,29 +188,33 @@ if (location.pathname != "/senate-data.html" &&
 
 
     console.log(JSON.stringify(statistics));
-}
+};
 
-var array = [100,55,88,88,99,888,999,1000,55,66];
-var sortedArray = [];
+// Members who least often vote with their party:
 
-console.log(array);
-console.log(array.length);
+// Sorting the array:
+var membersVotesLeastParty = [...members].sort(function (a, b) {
+    return a.votes_with_party_pct - b.votes_with_party_pct
+});
 
-function leastLoyalParty(){
-  array.sort(function(a, b){return a - b});
-   
-  
-  for (var i=0; i < array.length; i++){
-    if (i < array.length/10){
-      sortedArray.push(array[i]);
-    }else if (array[i]==array[i-1]){
-      sortedArray.push(array[i]);
-    }else{
-      break;
+function leastLoyalParty(array, key) {
+    var sortedArray = [];
+    array.sort(function (a, b) {
+        return a - b
+    });
+
+
+    for (var i = 0; i < array.length; i++) {
+        if (i < array.length / 10) {
+            sortedArray.push(array[i]);
+        } else if (array[i][key] == array[i - 1][key]) {
+            sortedArray.push(array[i]);
+        } else {
+            break;
+        };
     };
-  };
-  return sortedArray
-  
+    return sortedArray
+
 }
 
-console.log(leastLoyalParty());
+console.log(leastLoyalParty(membersVotesLeastParty, "votes_with_party_pct"));
