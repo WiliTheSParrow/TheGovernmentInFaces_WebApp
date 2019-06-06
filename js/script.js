@@ -1,29 +1,23 @@
 //GENERATING THE TABLE FROM DATA:
+//The list of members______________________________________________
 var members = data.results[0].members;
 //Checkbox event listener___________________________________________
 if (location.pathname == "/senate-data.html" ||
     location.pathname == "/house-data.html") {
-
-
     var states = document.getElementById("states");
     var checkboxD = document.getElementById("d_checkbox");
     var checkboxR = document.getElementById("r_checkbox");
     var checkboxI = document.getElementById("i_checkbox");
-
     //Event listener
     states.addEventListener("click", checkedData);
     checkboxD.addEventListener("click", checkedData);
     checkboxR.addEventListener("click", checkedData);
     checkboxI.addEventListener("click", checkedData);
-
     checkedData();
-
-}
-
+};
 //Filtering data regarding checkboxes & dropdown menu_______________
 function checkedData() {
     var checkedDataArray = [];
-
     for (var i = 0; i < members.length; i++) {
         if (states.value == members[i].state || states.value == "All") {
             if (checkboxD.checked === true && members[i].party == "D") {
@@ -37,21 +31,20 @@ function checkedData() {
             }
             if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
                 checkedDataArray.push(members[i]);
-            }
-        }
-    }
+            };
+        };
+    };
     if (checkedDataArray == "") {
         noMatch();
     } else {
         makeTableData(checkedDataArray);
-    }
-}
+    };
+};
 
 function noMatch() {
     var table = document.getElementById("table-data");
     table.innerHTML = "No matches found.";
-}
-
+};
 //Makin the table___________________________________________________
 function makeTableData(checkedDataArray) {
 
@@ -87,9 +80,10 @@ function makeTableData(checkedDataArray) {
     row.appendChild(headerPercentage);
     table.appendChild(row);
 
-    //Where the magic happens:
+    //Where the magic happens____________________________
     for (i = 0; i < checkedDataArray.length; i++) {
-        //Names
+
+        //Names__________________________________________
         var row = document.createElement("TR");
         row.setAttribute("border", "1");
         var names = document.createElement("TD");
@@ -103,36 +97,35 @@ function makeTableData(checkedDataArray) {
         row.appendChild(names);
         table.appendChild(row);
 
-        //Parties
+        //Parties________________________________________
         var parties = document.createElement("TD");
         parties.innerHTML = checkedDataArray[i].party;
         parties.setAttribute("class", "tableparties");
         row.appendChild(parties);
         table.appendChild(row);
 
-        //State
+        //State__________________________________________
         var states = document.createElement("TD");
         states.innerHTML = checkedDataArray[i].state;
         states.setAttribute("class", "tablestates");
         row.appendChild(states);
         table.appendChild(row);
 
-        //Seniority
+        //Seniority______________________________________
         var seniorities = document.createElement("TD");
         seniorities.innerHTML = checkedDataArray[i].seniority;
         seniorities.setAttribute("class", "tablesseniorities");
         row.appendChild(seniorities);
         table.appendChild(row);
 
-        //Vote percentage
+        //Vote percentage________________________________
         var percentages = document.createElement("TD");
         percentages.innerHTML = checkedDataArray[i].votes_with_party_pct;
         percentages.setAttribute("class", "tablesseniorities");
         row.appendChild(percentages);
         table.appendChild(row);
-
-    }
-}
+    };
+};
 
 // DATA STATISTICS:
 
@@ -149,6 +142,7 @@ if (location.pathname != "/senate-data.html" &&
     var resultR = 0;
     var resultI = 0;
 
+    //Counting the number of all parties, democrats, republicans and independents_____
     for (var i = 0; i < members.length; i++) {
 
         noParties.push(members[i]);
@@ -165,11 +159,27 @@ if (location.pathname != "/senate-data.html" &&
         if (members[i].party == "I") {
             noIndependent.push(members[i]);
             resultI += members[i].votes_with_party_pct;
-        }
+        };
+    };
 
-    }
+    //Sorting the members array for vote percentage least_____________________________
+    var membersVotesLeastParty = [...members].sort(function (a, b) {
+        return a.votes_with_party_pct - b.votes_with_party_pct
+    });
+    //Sorting the members array for vote percentage most______________________________
+    var membersVotesMostParty = [...members].sort(function (a, b) {
+        return b.votes_with_party_pct - a.votes_with_party_pct
+    });
+    //Missed votes most (least engaged)________________________________________________
+    var membersMissedVotesPercDesc = [...members].sort(function (a, b) {
+        return b.missed_votes_pct - a.missed_votes_pct
+    });
+    //missed votes least (most engaged)________________________________________________
+    var membersMissedVotesPercAsc = [...members].sort(function (a, b) {
+        return a.missed_votes_pct - b.missed_votes_pct
+    });
 
-
+    //Statistics object________________________________________________________________
     var statistics = {
         "totalOfParties": noParties.length,
         "numberOfDemocrats": noDemocrats.length,
@@ -179,35 +189,23 @@ if (location.pathname != "/senate-data.html" &&
         "votesWPartyR": (resultR /= noRepublicans.length).toFixed(2),
         "votesWPartyI": (resultI /= noIndependent.length).toFixed(2),
         "totalvotedWParty": (result /= noParties.length).toFixed(2),
-        "bottomLoyalty": 0,
-        "topLoyalty": 0,
+        "bottomLoyalty": tenPercentCalc(membersVotesLeastParty, "votes_with_party_pct"),
+        "topLoyalty": tenPercentCalc(membersVotesMostParty, "votes_with_party_pct"),
         "bottomAttendance": 0,
         "topAttendance": 0
     };
 
+    //Console log to see if it's working:
 
+    if (location.pathname == "/senate_loyalty.html" ||
+        location.pathname == "/senate_attendance.html") {
+        console.log(JSON.stringify(statistics));
+        console.log(tenPercentCalc(membersMissedVotesPercDesc, "votes_with_party_pct"));
+        console.log(tenPercentCalc(membersMissedVotesPercAsc, "votes_with_party_pct"));
+    };
+};
 
-    console.log(JSON.stringify(statistics));
-
-    // Sorting the array for vote percentage least:
-    var membersVotesLeastParty = [...members].sort(function (a, b) {
-        return a.votes_with_party_pct - b.votes_with_party_pct
-    });
-    // Sorting the array for vote percentage least:
-    var membersVotesMostParty = [...members].sort(function (a, b) {
-        return b.votes_with_party_pct - a.votes_with_party_pct
-    });
-
-
-
-
-
-if (location.pathname == "/senate_loyalty.html") {
-    console.log(tenPercentCalc(membersVotesLeastParty, "votes_with_party_pct"));
-    console.log(tenPercentCalc(membersVotesMostParty, "votes_with_party_pct"));
-};};
-
-// Members who least often vote with their party:
+//Calculation to get 10% percent of the members (least/most voted w party, missed voting)____
 function tenPercentCalc(array, key) {
     var sortedArray = [];
     array.sort(function (a, b) {
