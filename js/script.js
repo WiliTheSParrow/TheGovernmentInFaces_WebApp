@@ -199,12 +199,13 @@ if (location.pathname != "/senate-data.html" &&
     createTableGlance();
 
     if (location.pathname == "/senate_attendance.html") {
-        tableStatistics(statistics.bottomAttendance, "senateLeastEngaged", "missed_votes", "missed_votes_pct");
-        tableStatistics(statistics.topAttendance, "senateMostEngaged", "missed_votes", "missed_votes_pct");
+        tableStatistics(statistics.bottomAttendance, "leastEngaged", "missed_votes", "missed_votes_pct");
+        tableStatistics(statistics.topAttendance, "mostEngaged", "missed_votes", "missed_votes_pct");
     };
 
     if (location.pathname == "/senate_loyalty.html") {
-
+        tableStatistics(statistics.bottomLoyalty, "leastEngaged", "total_votes", "votes_with_party_pct");
+        tableStatistics(statistics.topLoyalty, "mostEngaged", "total_votes", "votes_with_party_pct");
     };
 
 
@@ -267,22 +268,83 @@ function tableStatistics(array, tableId, key1, key2) {
 
 function createTableGlance() {
     // Where the table takes place in the HTML___________________
-    var tableId = document.getElementById("AtAGlance");
-    tableId.setAttribute("border", "1");
-    
+    var tableBody = document.getElementById("AtAGlance");
+    tableBody.setAttribute("border", "1");
+
     //Republicans:
-    var row01 = document.createElement("TR");
-    row01.setAttribute("border", "1");
+    var row1 = document.createElement("TR");
+    row1.setAttribute("border", "1");
     
+    var tdData1 = document.createElement("TD");
+    tdData1.innerHTML = "Republicans";
+    row1.appendChild(tdData1);
+    tableBody.appendChild(row1);
+
+    var tdData2 = document.createElement("TD");
+    tdData2.innerHTML = statistics.numberOfRepublicans;
+    row1.appendChild(tdData2);
+    tableBody.appendChild(row1);
+
+    var tdData3 = document.createElement("TD");
+    tdData3.innerHTML = statistics.votesWPartyR;
+    row1.appendChild(tdData3);
+    tableBody.appendChild(row1);
+    
+
     //Democrats:
-    var row01 = document.createElement("TR");
-    row01.setAttribute("border", "1");
+    var row2 = document.createElement("TR");
+    row2.setAttribute("border", "1");
     
+    var tdData4 = document.createElement("TD");
+    tdData4.innerHTML = "Democrats";
+    row2.appendChild(tdData4);
+    tableBody.appendChild(row2);
+
+    var tdData5 = document.createElement("TD");
+    tdData5.innerHTML = statistics.numberOfDemocrats;
+    row2.appendChild(tdData5);
+    tableBody.appendChild(row2);
+
+    var tdData6 = document.createElement("TD");
+    tdData6.innerHTML = statistics.votesWPartyD;
+    row2.appendChild(tdData6);
+    tableBody.appendChild(row2);
+
     //Independent:
-    var row01 = document.createElement("TR");
-    row01.setAttribute("border", "1");
+    var row3 = document.createElement("TR");
+    row3.setAttribute("border", "1");
     
+    var tdData7 = document.createElement("TD");
+    tdData7.innerHTML = "Independents";
+    row3.appendChild(tdData7);
+    tableBody.appendChild(row3);
+
+    var tdData8 = document.createElement("TD");
+    tdData8.innerHTML = statistics.numberOfIndependents;
+    row3.appendChild(tdData8);
+    tableBody.appendChild(row3);
+
+    var tdData9 = document.createElement("TD");
+    tdData9.innerHTML = statistics.votesWPartyI;
+    row3.appendChild(tdData9);
+    tableBody.appendChild(row3);
+
     //Total:
-    var row01 = document.createElement("TR");
-    row01.setAttribute("border", "1");
-}
+    var row4 = document.createElement("TR");
+    row4.setAttribute("border", "1");
+    
+    var tdData10 = document.createElement("TD");
+    tdData10.innerHTML = "Total";
+    row4.appendChild(tdData10);
+    tableBody.appendChild(row4);
+
+    var tdData11 = document.createElement("TD");
+    tdData11.innerHTML = statistics.totalOfParties;
+    row4.appendChild(tdData11);
+    tableBody.appendChild(row4);
+
+    var tdData12 = document.createElement("TD");
+    tdData12.innerHTML = statistics.totalvotedWParty;
+    row4.appendChild(tdData12);
+    tableBody.appendChild(row4);
+};
