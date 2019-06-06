@@ -191,22 +191,28 @@ if (location.pathname != "/senate-data.html" &&
         "totalvotedWParty": (result /= noParties.length).toFixed(2),
         "bottomLoyalty": tenPercentCalc(membersVotesLeastParty, "votes_with_party_pct"),
         "topLoyalty": tenPercentCalc(membersVotesMostParty, "votes_with_party_pct"),
-        "bottomAttendance": 0,
-        "topAttendance": 0
+        "bottomAttendance": tenPercentCalc(membersMissedVotesPercDesc, "missed_votes_pct"),
+        "topAttendance": tenPercentCalc(membersMissedVotesPercAsc, "missed_votes_pct")
     };
 
-    //Console log to see if it's working:
+    //Writing out the tables:
+    createTableGlance();
 
-    if (location.pathname == "/senate_loyalty.html" ||
-        location.pathname == "/senate_attendance.html") {
-        console.log(JSON.stringify(statistics));
-        console.log(tenPercentCalc(membersMissedVotesPercDesc, "votes_with_party_pct"));
-        console.log(tenPercentCalc(membersMissedVotesPercAsc, "votes_with_party_pct"));
+    if (location.pathname == "/senate_attendance.html") {
+        tableStatistics(statistics.bottomAttendance, "senateLeastEngaged", "missed_votes", "missed_votes_pct");
+        tableStatistics(statistics.topAttendance, "senateMostEngaged", "missed_votes", "missed_votes_pct");
     };
+
+    if (location.pathname == "/senate_loyalty.html") {
+
+    };
+
+
 };
 
 //Calculation to get 10% percent of the members (least/most voted w party, missed voting)____
 function tenPercentCalc(array, key) {
+    var counter = 0;
     var sortedArray = [];
     array.sort(function (a, b) {
         return a - b
@@ -222,3 +228,61 @@ function tenPercentCalc(array, key) {
     };
     return sortedArray
 };
+
+//Making table for statistics______________________________________________
+
+function tableStatistics(array, tableId, key1, key2) {
+    // Where the table takes place in the HTML___________________
+    var tableId = document.getElementById(tableId);
+    tableId.setAttribute("border", "1");
+
+    //Magic______________________________________________
+    for (var i = 0; i < array.length; i++) {
+
+        var row = document.createElement("TR");
+        row.setAttribute("border", "1");
+        //Name_____________________________________________
+        var data01 = document.createElement("TD");
+        if (array[i].middle_name === null) {
+            data01.innerHTML = (array[i].first_name + " " + array[i].last_name).link(array[i].url);
+        } else {
+            data01.innerHTML = (array[i].first_name + " " + array[i].middle_name + " " + array[i].last_name).link(array[i].url);
+        }
+        //Data_____________________________________________
+        data01.setAttribute("class", "tablenames");
+        row.appendChild(data01);
+        tableId.appendChild(row);
+
+        var data02 = document.createElement("TD");
+        data02.innerHTML = array[i][key1];
+        row.appendChild(data02);
+        tableId.appendChild(row);
+
+        var data03 = document.createElement("TD");
+        data03.innerHTML = array[i][key2];
+        row.appendChild(data03);
+        tableId.appendChild(row);
+    };
+};
+
+function createTableGlance() {
+    // Where the table takes place in the HTML___________________
+    var tableId = document.getElementById("AtAGlance");
+    tableId.setAttribute("border", "1");
+    
+    //Republicans:
+    var row01 = document.createElement("TR");
+    row01.setAttribute("border", "1");
+    
+    //Democrats:
+    var row01 = document.createElement("TR");
+    row01.setAttribute("border", "1");
+    
+    //Independent:
+    var row01 = document.createElement("TR");
+    row01.setAttribute("border", "1");
+    
+    //Total:
+    var row01 = document.createElement("TR");
+    row01.setAttribute("border", "1");
+}
