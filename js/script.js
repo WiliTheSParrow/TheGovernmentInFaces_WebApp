@@ -198,12 +198,14 @@ if (location.pathname != "/senate-data.html" &&
     //Writing out the tables:
     createTableGlance();
 
-    if (location.pathname == "/senate_attendance.html") {
+    if (location.pathname == "/senate_attendance.html" ||
+       location.pathname == "/house_attendance.html") {
         tableStatistics(statistics.bottomAttendance, "leastEngaged", "missed_votes", "missed_votes_pct");
         tableStatistics(statistics.topAttendance, "mostEngaged", "missed_votes", "missed_votes_pct");
     };
 
-    if (location.pathname == "/senate_loyalty.html") {
+    if (location.pathname == "/senate_loyalty.html" ||
+       location.pathname == "/house_loyalty.html") {
         tableStatistics(statistics.bottomLoyalty, "leastEngaged", "total_votes", "votes_with_party_pct");
         tableStatistics(statistics.topLoyalty, "mostEngaged", "total_votes", "votes_with_party_pct");
     };

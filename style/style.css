@@ -14,6 +14,26 @@
      border-top: 1px solid #494a3c;
 }
 
+.col {
+    border: 1px solid red;
+    margin: 1%;
+    text-align: justify;
+}
+.col h3{
+    text-align: center;
+}
+
+.col table{
+    border: 2px solid green;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+        
 body {
     background: #81734d;
 }
