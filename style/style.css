@@ -15,16 +15,11 @@
 }
 
 .col {
-    border: 1px solid red;
     margin: 1%;
     text-align: justify;
 }
 .col h3{
     text-align: center;
-}
-
-.col table{
-    border: 2px solid green;
 }
 
 table {
