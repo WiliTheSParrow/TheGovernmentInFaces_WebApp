@@ -1,3 +1,18 @@
+var app = new Vue({
+    el: '#app',
+    data: {
+        name: 'John',
+        job: 'unemployed',
+        interests: ['yoga', 'art', 'barist'],
+        friends: [
+            {'one': 'Kathy'},
+            {'two': 'Ellen'},
+            {'three': 'Jonathan'}
+        ],
+        totalOfParties:[],
+    }
+});
+
 //GENERATING THE TABLE FROM DATA:
 //The list of members______________________________________________
 var members = data.results[0].members;
@@ -199,13 +214,13 @@ if (location.pathname != "/senate-data.html" &&
     createTableGlance();
 
     if (location.pathname == "/senate_attendance.html" ||
-       location.pathname == "/house_attendance.html") {
+        location.pathname == "/house_attendance.html") {
         tableStatistics(statistics.bottomAttendance, "leastEngaged", "missed_votes", "missed_votes_pct");
         tableStatistics(statistics.topAttendance, "mostEngaged", "missed_votes", "missed_votes_pct");
     };
 
     if (location.pathname == "/senate_loyalty.html" ||
-       location.pathname == "/house_loyalty.html") {
+        location.pathname == "/house_loyalty.html") {
         tableStatistics(statistics.bottomLoyalty, "leastEngaged", "total_votes", "votes_with_party_pct");
         tableStatistics(statistics.topLoyalty, "mostEngaged", "total_votes", "votes_with_party_pct");
     };
@@ -276,7 +291,7 @@ function createTableGlance() {
     //Republicans:
     var row1 = document.createElement("TR");
     row1.setAttribute("border", "1");
-    
+
     var tdData1 = document.createElement("TD");
     tdData1.innerHTML = "Republicans";
     row1.appendChild(tdData1);
@@ -291,12 +306,12 @@ function createTableGlance() {
     tdData3.innerHTML = statistics.votesWPartyR;
     row1.appendChild(tdData3);
     tableBody.appendChild(row1);
-    
+
 
     //Democrats:
     var row2 = document.createElement("TR");
     row2.setAttribute("border", "1");
-    
+
     var tdData4 = document.createElement("TD");
     tdData4.innerHTML = "Democrats";
     row2.appendChild(tdData4);
@@ -315,7 +330,7 @@ function createTableGlance() {
     //Independent:
     var row3 = document.createElement("TR");
     row3.setAttribute("border", "1");
-    
+
     var tdData7 = document.createElement("TD");
     tdData7.innerHTML = "Independents";
     row3.appendChild(tdData7);
@@ -334,7 +349,7 @@ function createTableGlance() {
     //Total:
     var row4 = document.createElement("TR");
     row4.setAttribute("border", "1");
-    
+
     var tdData10 = document.createElement("TD");
     tdData10.innerHTML = "Total";
     row4.appendChild(tdData10);

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="app">
 
         <!--- HEADER PART WITH LOGO AND E-MAIL ICON -->
         <div class="row">
@@ -63,16 +63,6 @@
 
             </nav>
         </div>
-
-        <!--- 
-        <header>
-            <div>
-                <p>https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment</p>
-
-            </div>
-        </header>
-        -->
-
         <!--- HOMEPAGE BODY WITH SENATE DATA TABLE -->
         <div class="row">
             <div class="col-md-7 col-sm-9" id="congressment">
@@ -146,19 +136,20 @@
                 </div>
             </div>
         </div>
-        <div class="table table-stripped" id="app">
-            <!-- Vue JS magic -->
+        <div>
             <tbody>
-                <tr v-for="(value,key) in senators">
-                    <td>{{value.first_name}} {{value.middle_name}} {{value-last_name}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr class="tableheader">
+                    <td>Name</td>
+                    <td>Party Affiliation</td>
+                    <td>State</td>
+                    <td>Seniority</td>
+                    <td>Percentage of Votes</td>
                 </tr>
             </tbody>
 
+        </div>
 
+        <div class="table table-stripped">
             <table id="table-data" class="table-sm"></table>
         </div>
 
