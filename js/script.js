@@ -1,18 +1,64 @@
 var app = new Vue({
     el: '#app',
     data: {
-        name: 'John',
-        job: 'unemployed',
-        interests: ['yoga', 'art', 'barist'],
-        friends: [
-            {'one': 'Kathy'},
-            {'two': 'Ellen'},
-            {'three': 'Jonathan'}
-        ],
-        totalOfParties:[],
+        filteredArray: [],
+        senators: [],
+        houses: [],
+        democrats: [],
+        republicans: [],
+        independents: [],
+        votesWPartyD: [],
+        votesWPartyR: [],
+        votesWPartyI: [],
+        totalvotedWParty: [],
+        bottomLoyalty: [],
+        topLoyalty: [],
+        bottomAttendance: [],
+        topAttendance: []
+    },
+
+    methods: {
+        //Filtering data regarding checkboxes & dropdown menu_______________
+        checkedData: function () {
+            var members = data.results[0].members;
+            app.filteredArray = [];
+
+            if (location.pathname == "/senate-data.html" ||
+                location.pathname == "/house-data.html") {
+                states = document.getElementById("states");
+                checkboxD = document.getElementById("d_checkbox");
+                checkboxR = document.getElementById("r_checkbox");
+                checkboxI = document.getElementById("i_checkbox");
+            }
+
+            for (var i = 0; i < members.length; i++) {
+                if (states.value == members[i].state || states.value == "All") {
+                    if (checkboxD.checked === true && members[i].party == "D") {
+                        app.filteredArray.push(members[i]);
+                    }
+                    if (checkboxR.checked === true && members[i].party == "R") {
+                        app.filteredArray.push(members[i]);
+                    }
+                    if (checkboxI.checked === true && members[i].party == "I") {
+                        app.filteredArray.push(members[i]);
+                    }
+                    if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
+                        app.filteredArray.push(members[i]);
+                    };
+                };
+            };
+            if (app.filteredArray == "") {
+                noMatch();
+            } else {
+                makeTableData(checkedDataArray);
+            };
+        };
+
     }
+
 });
 
+/*
 //GENERATING THE TABLE FROM DATA:
 //The list of members______________________________________________
 var members = data.results[0].members;
@@ -29,6 +75,8 @@ if (location.pathname == "/senate-data.html" ||
     checkboxR.addEventListener("click", checkedData);
     checkboxI.addEventListener("click", checkedData);
     checkedData();
+
+
 };
 //Filtering data regarding checkboxes & dropdown menu_______________
 function checkedData() {
@@ -365,3 +413,4 @@ function createTableGlance() {
     row4.appendChild(tdData12);
     tableBody.appendChild(row4);
 };
+*/

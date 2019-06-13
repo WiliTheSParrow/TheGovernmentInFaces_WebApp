@@ -75,12 +75,12 @@
         <div class="row">
             <div class="col" id="filterByParty">
                 Filter by Party:
-                <input type="checkbox" id="d_checkbox"> Democrat
-                <input type="checkbox" id="r_checkbox"> Republican
-                <input type="checkbox" id="i_checkbox"> Independent
+                <input type="checkbox" id="d_checkbox" v-on:click="checkedData" checked> Democrat
+                <input type="checkbox" id="r_checkbox" v-on:click="checkedData" checked> Republican
+                <input type="checkbox" id="i_checkbox" v-on:click="checkedData" checked> Independent
 
                 <div class="float-right pr-5">Filter by State:
-                    <select id="states">
+                    <select id="states" v-on:change="checkedData">
                         <option value="All">All States</option>
                         <option value="AK">AK</option>
                         <option value="AL">AL</option>
@@ -137,15 +137,24 @@
             </div>
         </div>
         <div>
-            <tbody>
-                <tr class="tableheader">
-                    <td>Name</td>
-                    <td>Party Affiliation</td>
-                    <td>State</td>
-                    <td>Seniority</td>
-                    <td>Percentage of Votes</td>
-                </tr>
-            </tbody>
+            <table>
+                <tbody>
+                    <tr class="tableheader">
+                        <td>Name</td>
+                        <td>Party Affiliation</td>
+                        <td>State</td>
+                        <td>Seniority</td>
+                        <td>Percentage of Votes</td>
+                    </tr>
+                    <tr v-for="(value,key) in filteredArray">
+                        <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                        <td>{{value.party}}</td>
+                        <td>{{value.state}}</td>
+                        <td>{{value.seniority}}</td>
+                        <td>{{value.votes_with_party_pct}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
 
