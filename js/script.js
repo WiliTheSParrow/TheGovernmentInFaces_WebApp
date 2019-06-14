@@ -14,13 +14,14 @@ var app = new Vue({
         bottomLoyalty: [],
         topLoyalty: [],
         bottomAttendance: [],
-        topAttendance: []
+        topAttendance: [],
+        
     },
-
+    
     methods: {
         //Filtering data regarding checkboxes & dropdown menu_______________
         checkedData: function () {
-            var members = data.results[0].members;
+
             app.filteredArray = [];
 
             if (location.pathname == "/senate-data.html" ||
@@ -42,9 +43,7 @@ var app = new Vue({
                     if (checkboxI.checked === true && members[i].party == "I") {
                         app.filteredArray.push(members[i]);
                     }
-                    if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
-                        app.filteredArray.push(members[i]);
-                    };
+
                 };
             };
             if (app.filteredArray == "") {
@@ -52,13 +51,13 @@ var app = new Vue({
             } else {
                 makeTableData(checkedDataArray);
             };
-        };
+        }
 
     }
 
 });
 
-/*
+
 //GENERATING THE TABLE FROM DATA:
 //The list of members______________________________________________
 var members = data.results[0].members;
@@ -413,4 +412,3 @@ function createTableGlance() {
     row4.appendChild(tdData12);
     tableBody.appendChild(row4);
 };
-*/
