@@ -15,10 +15,54 @@ var app = new Vue({
         topLoyalty: [],
         bottomAttendance: [],
         topAttendance: [],
-        
+        urlsh: ""
+
     },
-    
-    
+
+    created: function () {
+        if (
+            location.pathname == "/senate-data.html" ||
+            location.pathname == "/senate_attendance.html" ||
+            location.pathname == "/senate_loyalty.html"
+        ) {
+            this.urlsh = "senate";
+        }
+
+        else if (
+            location.pathname == "/house-data.html" ||
+            location.pathname == "/house_attendance.html" ||
+            location.pathname == "/house_loyalty.html"
+        ) {
+            this.urlsh = "house";
+        };
+        
+        this.getData();
+    },
+
+    methods: {
+        getData: function () {
+
+            fetch("https://api.propublica.org/congress/v1/113/" + this.urlsh + "/members.json", {
+                    method: "GET",
+                    headers: new Headers({
+                        "X-API-Key": '4nXBqNQbaectboHwhphpVBldHZGmdNLph0DjOSjj'
+                    })
+                }).then(function (response) {
+                    if (response.ok)
+                        return response.json();
+                }).then(function (json) {
+
+                    var mindenAmiaJsonbenVan = json;
+                    console.log(mindenAmiaJsonbenVan);
+                    /* itt hivsz meg minden funkciót, amit futtatni akarsz, ha sikeres volt a call*/
+
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+    }
     /*
     methods: {
         //Filtering data regarding checkboxes & dropdown menu_______________
