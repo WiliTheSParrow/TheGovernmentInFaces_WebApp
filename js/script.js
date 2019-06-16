@@ -18,6 +18,8 @@ var app = new Vue({
         
     },
     
+    
+    /*
     methods: {
         //Filtering data regarding checkboxes & dropdown menu_______________
         checkedData: function () {
@@ -54,10 +56,10 @@ var app = new Vue({
         }
 
     }
-
+*/
 });
 
-
+/*
 //GENERATING THE TABLE FROM DATA:
 //The list of members______________________________________________
 var members = data.results[0].members;
@@ -412,3 +414,4 @@ function createTableGlance() {
     row4.appendChild(tdData12);
     tableBody.appendChild(row4);
 };
+*/
