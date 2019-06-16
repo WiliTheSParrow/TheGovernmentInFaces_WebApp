@@ -1,7 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
-        filteredArray: [],
+        
+        members: [],
+        checkedDataArray: [],
+
         senators: [],
         houses: [],
         democrats: [],
@@ -16,7 +19,6 @@ var app = new Vue({
         bottomAttendance: [],
         topAttendance: [],
         urlsh: ""
-
     },
 
     created: function () {
@@ -26,18 +28,17 @@ var app = new Vue({
             location.pathname == "/senate_loyalty.html"
         ) {
             this.urlsh = "senate";
-        }
-
-        else if (
+        } else if (
             location.pathname == "/house-data.html" ||
             location.pathname == "/house_attendance.html" ||
             location.pathname == "/house_loyalty.html"
         ) {
             this.urlsh = "house";
         };
-        
+
         this.getData();
     },
+
 
     methods: {
         getData: function () {
@@ -52,8 +53,13 @@ var app = new Vue({
                         return response.json();
                 }).then(function (json) {
 
-                    var mindenAmiaJsonbenVan = json;
-                    console.log(mindenAmiaJsonbenVan);
+                    var data = json;
+                    app.members = data.results[0].members;
+                    app.checkedDataArray = app.members;
+
+                    console.log("Whole JSON: ", data);
+                    console.log("Just the members: ", app.members);
+                    console.log("Filtered Array: ", app.checkedDataArray);
                     /* itt hivsz meg minden funkciót, amit futtatni akarsz, ha sikeres volt a call*/
 
 
@@ -61,14 +67,10 @@ var app = new Vue({
                 .catch(function (error) {
                     console.log(error);
                 })
-        }
-    }
-    /*
-    methods: {
-        //Filtering data regarding checkboxes & dropdown menu_______________
-        checkedData: function () {
+        },
 
-            app.filteredArray = [];
+        checkedData: function () {
+            app.checkedDataArray = [];
 
             if (location.pathname == "/senate-data.html" ||
                 location.pathname == "/house-data.html") {
@@ -78,29 +80,31 @@ var app = new Vue({
                 checkboxI = document.getElementById("i_checkbox");
             }
 
-            for (var i = 0; i < members.length; i++) {
-                if (states.value == members[i].state || states.value == "All") {
-                    if (checkboxD.checked === true && members[i].party == "D") {
-                        app.filteredArray.push(members[i]);
+            for (var i = 0; i < app.members.length; i++) {
+                if (states.value == app.members[i].state || states.value == "All") {
+                    if (checkboxD.checked === true && app.members[i].party == "D") {
+                        app.checkedDataArray.push(app.members[i]);
                     }
-                    if (checkboxR.checked === true && members[i].party == "R") {
-                        app.filteredArray.push(members[i]);
+                    if (checkboxR.checked === true && app.members[i].party == "R") {
+                        app.checkedDataArray.push(app.members[i]);
                     }
-                    if (checkboxI.checked === true && members[i].party == "I") {
-                        app.filteredArray.push(members[i]);
+                    if (checkboxI.checked === true && app.members[i].party == "I") {
+                        app.checkedDataArray.push(app.members[i]);
                     }
-
+                    /*
+                    if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
+                        app.checkedDataArray.push(app.members[i]);
+                    };
+                    */
                 };
             };
-            if (app.filteredArray == "") {
+            if (app.checkedDataArray == "") {
                 noMatch();
             } else {
-                makeTableData(checkedDataArray);
+                makeTableData(app.checkedDataArray);
             };
         }
-
     }
-*/
 });
 
 /*
