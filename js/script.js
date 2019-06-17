@@ -1,9 +1,19 @@
 var app = new Vue({
     el: '#app',
     data: {
-        
+
         members: [],
         checkedDataArray: [],
+        noParties: [],
+        noDemocrats: [],
+        noRepublicans: [],
+        noIndependent: [],
+        result: 0,
+        resultD: 0,
+        resultR: 0,
+        resultI: 0,
+
+
 
         senators: [],
         houses: [],
@@ -78,7 +88,7 @@ var app = new Vue({
                 checkboxD = document.getElementById("d_checkbox");
                 checkboxR = document.getElementById("r_checkbox");
                 checkboxI = document.getElementById("i_checkbox");
-            }
+            };
 
             for (var i = 0; i < app.members.length; i++) {
                 if (states.value == app.members[i].state || states.value == "All") {
@@ -98,65 +108,75 @@ var app = new Vue({
                     */
                 };
             };
+
             if (app.checkedDataArray == "") {
                 noMatch();
             } else {
                 makeTableData(app.checkedDataArray);
+            }
+        },
+
+        noMatch: function () {
+            table = document.getElementById("table-data");
+            table.innerHTML = "No matches found.";
+        },
+
+        countParties: function () {
+
+            app.noParties = [];
+            app.noDemocrats = [];
+            app.noRepublicans = [];
+            app.noIndependent = [];
+            app.result = 0;
+            app.resultD = 0;
+            app.resultR = 0;
+            app.resultI = 0;
+
+            if (location.pathname != "/senate-data.html" &&
+                location.pathname != "/house-data.html" &&
+                location.pathname != "/home.html") {
+
+                //Counting the number of all parties, democrats, republicans and independents_____
+                for (var i = 0; i < app.members.length; i++) {
+
+                    app.noParties.push(app.members[i]);
+                    app.result += app.members[i].votes_with_party_pct;
+
+                    if (app.members[i].party == "D") {
+                        app.noDemocrats.push(app.members[i]);
+                        app.resultD += app.members[i].votes_with_party_pct;
+                    }
+                    if (app.members[i].party == "R") {
+                        app.noRepublicans.push(app.members[i]);
+                        app.resultR += app.members[i].votes_with_party_pct;
+                    }
+                    if (app.members[i].party == "I") {
+                        app.noIndependent.push(app.members[i]);
+                        app.resultI += app.members[i].votes_with_party_pct;
+                    };
+                };
             };
+
+            console.log("No. parties:", app.noParties);
+            console.log("No. democrats:", app.noDemocrats);
+            console.log("No. republicans:", app.noRepublicans);
+            console.log("No. independents:", app.noIndependent);
+            console.log("Results:", app.result);
+            console.log("Results democr:", app.resultD);
+            console.log("Results republic:", app.resultR);
+            console.log("Results indep:", app.resultI);
+            
+
         }
     }
+
 });
+
+app.countParties();
 
 /*
 //GENERATING THE TABLE FROM DATA:
-//The list of members______________________________________________
-var members = data.results[0].members;
-//Checkbox event listener___________________________________________
-if (location.pathname == "/senate-data.html" ||
-    location.pathname == "/house-data.html") {
-    var states = document.getElementById("states");
-    var checkboxD = document.getElementById("d_checkbox");
-    var checkboxR = document.getElementById("r_checkbox");
-    var checkboxI = document.getElementById("i_checkbox");
-    //Event listener
-    states.addEventListener("click", checkedData);
-    checkboxD.addEventListener("click", checkedData);
-    checkboxR.addEventListener("click", checkedData);
-    checkboxI.addEventListener("click", checkedData);
-    checkedData();
 
-
-};
-//Filtering data regarding checkboxes & dropdown menu_______________
-function checkedData() {
-    var checkedDataArray = [];
-    for (var i = 0; i < members.length; i++) {
-        if (states.value == members[i].state || states.value == "All") {
-            if (checkboxD.checked === true && members[i].party == "D") {
-                checkedDataArray.push(members[i]);
-            }
-            if (checkboxR.checked === true && members[i].party == "R") {
-                checkedDataArray.push(members[i]);
-            }
-            if (checkboxI.checked === true && members[i].party == "I") {
-                checkedDataArray.push(members[i]);
-            }
-            if (checkboxD.checked === false && checkboxR.checked === false && checkboxI.checked === false) {
-                checkedDataArray.push(members[i]);
-            };
-        };
-    };
-    if (checkedDataArray == "") {
-        noMatch();
-    } else {
-        makeTableData(checkedDataArray);
-    };
-};
-
-function noMatch() {
-    var table = document.getElementById("table-data");
-    table.innerHTML = "No matches found.";
-};
 //Makin the table___________________________________________________
 function makeTableData(checkedDataArray) {
 
