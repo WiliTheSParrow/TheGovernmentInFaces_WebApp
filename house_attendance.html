@@ -77,17 +77,34 @@
             </div>
             <div class="col">
                 <h3>House at a glance</h3>
-                <table class="table-stripped">
-                    <thead>
-                        <tr>
+                <table class="table table-stripped">
+                    <tbody>
+                        <tr class="tableheader">
                             <th>Party</th>
-                            <th>Number of Reps</th>
+                            <th>No. of Reps</th>
                             <th>% Voted with Party</th>
                         </tr>
-                    </thead>
-
-                    <tbody id="AtAGlance"></tbody>
-
+                        <tr>
+                            <td>Democrats</td>
+                            <td>{{noDemocrats.length}}</td>
+                            <td>{{totalPercent(noDemocrats).toFixed(2)}}</td>
+                        </tr>
+                        <tr>
+                            <td>Republicans</td>
+                            <td>{{noRepublicans.length}}</td>
+                            <td>{{totalPercent(noRepublicans).toFixed(2)}}</td>
+                        </tr>
+                        <tr>
+                            <td>Independents</td>
+                            <td>{{noIndependent.length}}</td>
+                            <td>{{totalPercent(noIndependent).toFixed(2)}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{{noParties.length}}</td>
+                            <td>{{totalPercent(noParties).toFixed(2)}}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -95,32 +112,42 @@
             <div class="col">
                 <h3>Least Engaged</h3>
                 <h3>(Bottom 10% Attendance)</h3>
-                <table class="table-stripped">
-                    <thead>
-                        <tr>
+                <table class="table table-stripped">
+                    <tbody>
+
+                        <tr class="tableheader">
                             <th>Name</th>
-                            <th>Number of Missed Votes</th>
+                            <th>No. Missed Votes</th>
                             <th>% Missed</th>
                         </tr>
-                    </thead>
+                        <tr v-for="(value, key) in bottomAttendance">
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.missed_votes}}</td>
+                            <td>{{value.missed_votes_pct.toFixed(2)}}</td>
+                        </tr>
 
-                    <tbody id="leastEngaged"></tbody>
+                    </tbody>
 
                 </table>
             </div>
             <div class="col">
                 <h3>Most Engaged</h3>
                 <h3>(Top 10% Attendance)</h3>
-                <table class="table-stripped">
-                    <thead>
-                        <tr>
+                <table class="table table-stripped">
+                    <tbody>
+
+                        <tr class="tableheader">
                             <th>Name</th>
-                            <th>Number of Missed Votes</th>
+                            <th>No. Missed Votes</th>
                             <th>% Missed</th>
                         </tr>
-                    </thead>
+                        <tr v-for="(value, key) in topAttendance">
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.missed_votes}}</td>
+                            <td>{{value.missed_votes_pct.toFixed(2)}}</td>
+                        </tr>
 
-                    <tbody id="mostEngaged"></tbody>
+                    </tbody>
 
                 </table>
             </div>

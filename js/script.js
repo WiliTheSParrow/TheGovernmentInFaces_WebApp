@@ -1,7 +1,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-
         members: [],
         checkedDataArray: [],
         noParties: [],
@@ -33,12 +32,8 @@ var app = new Vue({
         ) {
             this.urlsh = "house";
         };
-
-
+        
         this.getData();
-        this.countParties();
-        this.sortMembers();
-
     },
 
     methods: {
@@ -56,11 +51,12 @@ var app = new Vue({
                     var data = json;
                     app.members = data.results[0].members;
                     app.checkedDataArray = app.members;
+                   
 
                     console.log("Whole JSON: ", data);
                     console.log("Just the members: ", app.members);
                     console.log("Filtered Array: ", app.checkedDataArray);
-                    /* itt hivsz meg minden funkciót, amit futtatni akarsz, ha sikeres volt a call*/
+                    
                     app.countParties();
                     console.log("No. parties:", app.noParties);
                     console.log("No. democrats:", app.noDemocrats);
@@ -154,19 +150,17 @@ var app = new Vue({
         },
 
         sortMembers: function () {
-            //Sorting the members array for vote percentage least_____________________________
+            //Loyalty:
             this.membersVotesLeastParty = [...this.members].sort(function (a, b) {
                 return a.votes_with_party_pct - b.votes_with_party_pct
             });
-            //Sorting the members array for vote percentage most______________________________
             this.membersVotesMostParty = [...this.members].sort(function (a, b) {
                 return b.votes_with_party_pct - a.votes_with_party_pct
             });
-            //Missed votes most (least engaged)________________________________________________
+            //Attendance:
             this.membersMissedVotesPercDesc = [...this.members].sort(function (a, b) {
                 return b.missed_votes_pct - a.missed_votes_pct
             });
-            //missed votes least (most engaged)________________________________________________
             this.membersMissedVotesPercAsc = [...this.members].sort(function (a, b) {
                 return a.missed_votes_pct - b.missed_votes_pct
             })
@@ -188,16 +182,35 @@ var app = new Vue({
         leastMostVotes: function () {
             if (location.pathname == "/senate_attendance.html" ||
                 location.pathname == "/house_attendance.html") {
-                app.tenPerceentLeastMost(app.membersVotesLeastParty, "missed_votes_pct", app.bottomAttendance);
-                app.tenPerceentLeastMost(app.membersVotesMostParty, "missed_votes_pct", app.topAttendance);
+                app.tenPerceentLeastMost(app.membersMissedVotesPercDesc, "missed_votes_pct", app.bottomAttendance);
+                app.tenPerceentLeastMost(app.membersMissedVotesPercAsc, "missed_votes_pct", app.topAttendance);
             };
 
             if (location.pathname == "/senate_loyalty.html" ||
                 location.pathname == "/house_loyalty.html") {
-                app.tenPerceentLeastMost(app.membersMissedVotesPercDesc, "votes_with_party_pct", app.bottomLoyalty);
-                app.tenPerceentLeastMost(app.membersMissedVotesPercAsc, "votes_with_party_pct", app.topLoyalty);
+                app.tenPerceentLeastMost(app.membersVotesLeastParty, "votes_with_party_pct", app.bottomLoyalty);
+                app.tenPerceentLeastMost(app.membersVotesMostParty, "votes_with_party_pct", app.topLoyalty);
             };
         }
+
     }
 
 });
+
+/*
+function webLogic() {
+    app.countParties();
+    app.sortMembers();
+    if (location.pathname == "/senate_attendance.html" ||
+        location.pathname == "/house_attendance.html") {
+        app.tenPerceentLeastMost(app.membersMissedVotesPercDesc, "missed_votes_pct", app.bottomAttendance);
+        app.tenPerceentLeastMost(app.membersMissedVotesPercAsc, "missed_votes_pct", app.topAttendance);
+    };
+
+    if (location.pathname == "/senate_loyalty.html" ||
+        location.pathname == "/house_loyalty.html") {
+        app.tenPerceentLeastMost(app.membersVotesLeastParty, "votes_with_party_pct", app.bottomLoyalty);
+        app.tenPerceentLeastMost(app.membersVotesMostParty, "votes_with_party_pct", app.topLoyalty);
+    };
+}
+*/

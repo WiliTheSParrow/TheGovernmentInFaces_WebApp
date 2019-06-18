@@ -122,10 +122,10 @@
                             <th>No. Missed Votes</th>
                             <th>% Missed</th>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr v-for="(value, key) in bottomAttendance">
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.missed_votes}}</td>
+                            <td>{{value.missed_votes_pct.toFixed(2)}}</td>
                         </tr>
 
                     </tbody>
@@ -143,10 +143,10 @@
                             <th>No. Missed Votes</th>
                             <th>% Missed</th>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr v-for="(value, key) in topAttendance">
+                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td>{{value.missed_votes}}</td>
+                            <td>{{value.missed_votes_pct.toFixed(2)}}</td>
                         </tr>
 
                     </tbody>
