@@ -1,5 +1,6 @@
 var app = new Vue({
     el: '#app',
+
     data: {
         members: [],
         checkedDataArray: [],
@@ -32,7 +33,7 @@ var app = new Vue({
         ) {
             this.urlsh = "house";
         };
-        
+
         this.getData();
     },
 
@@ -47,41 +48,16 @@ var app = new Vue({
                     if (response.ok)
                         return response.json();
                 }).then(function (json) {
-
                     var data = json;
                     app.members = data.results[0].members;
                     app.checkedDataArray = app.members;
-                   
-
-                    console.log("Whole JSON: ", data);
-                    console.log("Just the members: ", app.members);
-                    console.log("Filtered Array: ", app.checkedDataArray);
-                    
                     app.countParties();
-                    console.log("No. parties:", app.noParties);
-                    console.log("No. democrats:", app.noDemocrats);
-                    console.log("No. republicans:", app.noRepublicans);
-                    console.log("No. independents:", app.noIndependent);
-
                     app.sortMembers();
-                    console.log("Votes least w party: ", app.membersVotesLeastParty);
-                    console.log("Votes most w party: ", app.membersVotesMostParty);
-                    console.log("Missed votes decreasing: ", app.membersMissedVotesPercDesc);
-                    console.log("Missed votes acreasing: ", app.membersMissedVotesPercAsc);
-
                     app.leastMostVotes();
-                    console.log("Least engaged: ", app.bottomAttendance);
-                    console.log("Most engaged: ", app.topAttendance);
-                    console.log("Least loyal: ", app.bottomLoyalty);
-                    console.log("Most loyal: ", app.topLoyalty);
-
-
                 })
                 .catch(function (error) {
                     console.log(error);
                 })
-
-
         },
 
         checkedData: function () {
@@ -192,25 +168,5 @@ var app = new Vue({
                 app.tenPerceentLeastMost(app.membersVotesMostParty, "votes_with_party_pct", app.topLoyalty);
             };
         }
-
     }
-
 });
-
-/*
-function webLogic() {
-    app.countParties();
-    app.sortMembers();
-    if (location.pathname == "/senate_attendance.html" ||
-        location.pathname == "/house_attendance.html") {
-        app.tenPerceentLeastMost(app.membersMissedVotesPercDesc, "missed_votes_pct", app.bottomAttendance);
-        app.tenPerceentLeastMost(app.membersMissedVotesPercAsc, "missed_votes_pct", app.topAttendance);
-    };
-
-    if (location.pathname == "/senate_loyalty.html" ||
-        location.pathname == "/house_loyalty.html") {
-        app.tenPerceentLeastMost(app.membersVotesLeastParty, "votes_with_party_pct", app.bottomLoyalty);
-        app.tenPerceentLeastMost(app.membersVotesMostParty, "votes_with_party_pct", app.topLoyalty);
-    };
-}
-*/
