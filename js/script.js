@@ -144,15 +144,13 @@ var app = new Vue({
                 }
             }
             if (app.checkedDataArray == "") {
-                noMatch();
-            } else {
-                makeTableData(app.checkedDataArray);
+                app.noMatch();
             }
         },
 
         noMatch: function () {
-            table = document.getElementById("table-data");
-            table.innerHTML = "No matches found.";
+            console.log("No matches found.");
+            alert("No matches found.");
         },
 
         countParties: function () {
