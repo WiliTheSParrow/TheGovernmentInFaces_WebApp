@@ -101,7 +101,7 @@
                         <th>Percentage of Votes</th>
                     </tr>
                     <tr v-for="(value,key) in checkedDataArray">
-                        <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                        <td><a :href="value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</a></td>
                         <td>{{value.party}}</td>
                         <td>{{value.state}}</td>
                         <td>{{value.seniority}}</td>
