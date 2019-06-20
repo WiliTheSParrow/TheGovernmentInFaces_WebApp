@@ -17,10 +17,10 @@ var app = new Vue({
         bottomAttendance: [],
         topAttendance: [],
         urlsh: "",
+        isTableFull: true,
         states: {
             "AL": "Alabama",
             "AK": "Alaska",
-            "AS": "American Samoa",
             "AZ": "Arizona",
             "AR": "Arkansas",
             "CA": "California",
@@ -28,10 +28,8 @@ var app = new Vue({
             "CT": "Connecticut",
             "DE": "Delaware",
             "DC": "District Of Columbia",
-            "FM": "Federated States Of Micronesia",
             "FL": "Florida",
             "GA": "Georgia",
-            "GU": "Guam",
             "HI": "Hawaii",
             "ID": "Idaho",
             "IL": "Illinois",
@@ -41,7 +39,6 @@ var app = new Vue({
             "KY": "Kentucky",
             "LA": "Louisiana",
             "ME": "Maine",
-            "MH": "Marshall Islands",
             "MD": "Maryland",
             "MA": "Massachusetts",
             "MI": "Michigan",
@@ -57,13 +54,10 @@ var app = new Vue({
             "NY": "New York",
             "NC": "North Carolina",
             "ND": "North Dakota",
-            "MP": "Northern Mariana Islands",
             "OH": "Ohio",
             "OK": "Oklahoma",
             "OR": "Oregon",
-            "PW": "Palau",
             "PA": "Pennsylvania",
-            "PR": "Puerto Rico",
             "RI": "Rhode Island",
             "SC": "South Carolina",
             "SD": "South Dakota",
@@ -71,7 +65,6 @@ var app = new Vue({
             "TX": "Texas",
             "UT": "Utah",
             "VT": "Vermont",
-            "VI": "Virgin Islands",
             "VA": "Virginia",
             "WA": "Washington",
             "WV": "West Virginia",
@@ -144,13 +137,9 @@ var app = new Vue({
                 }
             }
             if (app.checkedDataArray == "") {
-                app.noMatch();
+               
+                app.isTableFull = false;
             }
-        },
-
-        noMatch: function () {
-            console.log("No matches found.");
-            alert("No matches found.");
         },
 
         countParties: function () {
