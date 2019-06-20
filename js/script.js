@@ -139,6 +139,8 @@ var app = new Vue({
             if (app.checkedDataArray == "") {
 
                 app.isTableFull = false;
+            } else {
+                app.isTableFull = true;
             }
         },
 
