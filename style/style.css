@@ -3,32 +3,28 @@
     color: black;
 }
 
-.table-stripped th{
+.table-stripped th {
     border-top: 1px solid #494a3c;
     background: #494a3c !important;
     color: #ece0be;
     text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
 }
 
-.table-stripped td{
-     border-top: 1px solid #494a3c;
+.table-stripped td {
+    border-top: 1px solid #494a3c;
 }
 
 .col {
     margin: 1%;
     text-align: justify;
 }
-.col h3{
+
+.col h3 {
     text-align: center;
 }
 
-table {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: auto;
-}
-        
+
+
 body {
     background: #81734d;
 }
@@ -49,23 +45,23 @@ body {
     color: #ece0be;
 }
 
-#aboutUs{
+#aboutUs {
     text-align: justify;
     padding-top: 2%;
 }
 
-#congressment{
+#congressment {
     text-align: justify;
     padding-top: 2%;
     margin-left: 2%;
 }
 
-#backgroundHistory{
+#backgroundHistory {
     text-align: justify;
     padding-bottom: 2%;
 }
 
-#moreAboutbtn{
+#moreAboutbtn {
     background: #ece0be;
     border: none;
 }
@@ -83,13 +79,13 @@ body {
     margin-bottom: 1%;
 }
 
-#table-data{
+#table-data {
     width: 90%;
     margin-left: 5%;
-    
+
 }
 
-#topBtn{
+#topBtn {
     position: fixed;
     bottom: 2%;
     right: 2%;
@@ -102,5 +98,5 @@ body {
     text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
     cursor: pointer;
     display: none;
-        
+
 }
