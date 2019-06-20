@@ -18,6 +18,8 @@ var app = new Vue({
         topAttendance: [],
         urlsh: "",
         isTableFull: true,
+        hidegif: true,
+        hideTable:true,
         states: {
             "AL": "Alabama",
             "AK": "Alaska",
@@ -93,6 +95,7 @@ var app = new Vue({
 
     methods: {
         getData: function () {
+            
             fetch("https://api.propublica.org/congress/v1/113/" + this.urlsh + "/members.json", {
                     method: "GET",
                     headers: new Headers({
@@ -108,6 +111,9 @@ var app = new Vue({
                     app.countParties();
                     app.sortMembers();
                     app.leastMostVotes();
+                    app.hidegif = false;
+                    app.hideTable = true;
+
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -219,23 +225,24 @@ var app = new Vue({
             };
         }
     }
-    
+
 
 });
 
 //Scroll To Top Button:
 $(document).ready(function () {
-    
-    $(window).scroll(function(){
-        if($(this).scrollTop()>40){
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 40) {
             $('#topBtn').fadeIn();
-        } else{
+        } else {
             $('#topBtn').fadeOut();
         }
     });
-    
+
     $("#topBtn").click(function () {
         $('html , body').animate({
-            scrollTop : 0}, 800);
+            scrollTop: 0
+        }, 800);
     });
 });
