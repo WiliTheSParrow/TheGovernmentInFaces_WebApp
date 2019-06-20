@@ -7,15 +7,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/3526fd308e.js"></script>
-    
 </head>
 
-<body data-gr-c-s-loaded="true" style="height: 2020px;">
+<body>
     <div class="container" id="app">
 
         <!--- HEADER PART WITH LOGO AND E-MAIL ICON -->
@@ -64,9 +63,9 @@
                         </div>
                     </li>
                 </ul>
-
             </nav>
         </div>
+        
         <!--- HOMEPAGE BODY WITH SENATE DATA TABLE -->
         <div class="row">
             <div class="col-md-7 col-sm-9" id="congressment">
@@ -91,8 +90,8 @@
                 </div>
             </div>
         </div>
-        <div>
 
+        <div>
             <table class="table table-stripped" v-if="isTableFull">
                 <tbody id="table-data" class="table-sm">
                     <tr class="tableheader">
@@ -109,14 +108,10 @@
                         <td>{{value.seniority}}</td>
                         <td>{{value.votes_with_party_pct}}</td>
                     </tr>
-
                 </tbody>
             </table>
             <p v-if="!isTableFull">No matches found.</p>
-
         </div>
-
-      
 
         <!--- FOOTER -->
         <div class="row">
@@ -125,22 +120,19 @@
                     <div class="footer-copyright text-center py-3">
                         &copy; 2016 TGIF | All Rights Reserved
                     </div>
-                   
+
                 </footer>
             </div>
         </div>
-        
+
     </div>
-    
-    <button id="topBtn"><i class="fas fa-angle-up"></i></button> 
+
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
     <!--- LOADING: JSON, JS scripts, jQuery, Bootstrap -->
-    
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <!---<script src="js/pro-congress-113-senate.js"></script>--->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/script.js"></script>
-    
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body></html>

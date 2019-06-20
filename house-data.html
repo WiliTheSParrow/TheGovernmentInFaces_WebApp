@@ -7,8 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/3526fd308e.js"></script>
 </head>
 
 <body>
@@ -60,7 +63,6 @@
                         </div>
                     </li>
                 </ul>
-
             </nav>
         </div>
 
@@ -73,14 +75,14 @@
             </div>
             <div class="col-md-5 col-sm-3"></div>
         </div>
-
+        <!---Table, Checkbox-->
         <div class="row">
             <div class="col float-left " id="filterByParty">
                 Filter by Party:
                 <input type="checkbox" id="d_checkbox" v-on:click="checkedData" checked> Democrat
                 <input type="checkbox" id="r_checkbox" v-on:click="checkedData" checked> Republican
                 <input type="checkbox" id="i_checkbox" v-on:click="checkedData" checked> Independent
-                <!---Table, Checkbox-->
+
                 <div class="float-right pr-5">Filter by State:
                     <select id="states" v-on:change="checkedData">
                         <option value="All">All States</option>
@@ -89,9 +91,9 @@
                 </div>
             </div>
         </div>
-        <div>
 
-            <table class="table table-stripped">
+        <div>
+            <table class="table table-stripped" v-if="isTableFull">
                 <tbody id="table-data" class="table-sm">
                     <tr class="tableheader">
                         <th>Name</th>
@@ -109,9 +111,8 @@
                     </tr>
                 </tbody>
             </table>
-
+            <p v-if="!isTableFull">No matches found.</p>
         </div>
-
 
         <!--- FOOTER -->
         <div class="row">
@@ -124,12 +125,15 @@
             </div>
         </div>
     </div>
+    
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
     <!--- LOADING: JSON, JS scripts, jQuery, Bootstrap -->
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <!---<script src="js/pro-congress-113-house.js"></script>--->
+    <!---<script src="js/pro-congress-113-senate.js"></script>--->
     <script src="js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body></html>
+</body>
+
+</html>

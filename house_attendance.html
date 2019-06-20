@@ -7,8 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/3526fd308e.js"></script>
 </head>
 
 <body>
@@ -60,19 +63,15 @@
                             <a href="senate_loyalty.html" class="dropdown-item">Senate</a>
                         </div>
                     </li>
-
                 </ul>
-
             </nav>
         </div>
 
         <!--Table container-->
-
         <div class="row">
             <div class="col">
                 <h2>Attendance</h2>
                 <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
-
                 <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
             </div>
             <div class="col">
@@ -125,9 +124,7 @@
                             <td>{{value.missed_votes}}</td>
                             <td>{{value.missed_votes_pct.toFixed(2)}}</td>
                         </tr>
-
                     </tbody>
-
                 </table>
             </div>
             <div class="col">
@@ -135,7 +132,6 @@
                 <h3>(Top 10% Attendance)</h3>
                 <table class="table table-stripped">
                     <tbody>
-
                         <tr class="tableheader">
                             <th>Name</th>
                             <th>No. Missed Votes</th>
@@ -146,14 +142,10 @@
                             <td>{{value.missed_votes}}</td>
                             <td>{{value.missed_votes_pct.toFixed(2)}}</td>
                         </tr>
-
                     </tbody>
-
                 </table>
             </div>
         </div>
-
-
 
         <!--- FOOTER -->
         <div class="row">
@@ -166,12 +158,13 @@
             </div>
         </div>
     </div>
+    
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
     <!--- LOADING: JSON, JS, jQuery, Bootstrap -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <!---<script src="js/pro-congress-113-house.js"></script>--->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body></html>
