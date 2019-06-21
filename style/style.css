@@ -34,6 +34,7 @@ body {
     box-shadow: 10px 10px 15px;
 }
 
+
 #navigationBar {
     background: #494a3c;
     text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
@@ -44,6 +45,19 @@ body {
     text-decoration: none;
     color: #ece0be;
 }
+
+.dropdown-menu {
+    background: #494a3c;
+}
+
+.dropdown-item:hover {
+    background: #aaaaaa;
+}
+
+.dropdown-item:active {
+    background:  #444444;
+}
+
 
 #aboutUs {
     text-align: justify;
@@ -101,6 +115,6 @@ body {
 
 }
 
-.loadergif{
-   text-align: center;
+.loadergif {
+    text-align: center;
 }
