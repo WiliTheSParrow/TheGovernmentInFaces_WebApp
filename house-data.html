@@ -93,9 +93,7 @@
         </div>
 
         <div>
-            <div class="loadergif" v-if="hidegif">
-                <img src="/img/loading.gif">
-            </div>
+           
             <table class="table table-stripped" v-if="isTableFull">
                 <tbody id="table-data" class="table-sm">
                     <tr class="tableheader">
@@ -114,6 +112,9 @@
                     </tr>
                 </tbody>
             </table>
+             <div class="loadergif" v-if="hidegif">
+                <img src="/img/loading.gif">
+            </div>
             <p v-if="!isTableFull">No matches found.</p>
         </div>
 

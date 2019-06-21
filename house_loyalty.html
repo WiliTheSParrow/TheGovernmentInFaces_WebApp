@@ -75,9 +75,7 @@
             </div>
             <div class="col">
                 <h3>House at a glance</h3>
-                <div class="loadergif" v-if="hidegif">
-                    <img src="/img/loading.gif">
-                </div>
+                
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
@@ -107,15 +105,16 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <h3>Least Loyal (Bottom 10% of Party)</h3>
                 
-                <div class="loadergif" v-if="hidegif">
-                    <img src="/img/loading.gif">
-                </div>
+               
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
@@ -130,13 +129,14 @@
                         </tr>
                     </tbody>
                 </table>
+                 <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
             </div>
             <div class="col">
                 <h3>Most Loyal (Top 10% of Party)</h3>
                 
-                <div class="loadergif" v-if="hidegif">
-                    <img src="/img/loading.gif">
-                </div>
+                
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
@@ -151,6 +151,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
             </div>
         </div>
 

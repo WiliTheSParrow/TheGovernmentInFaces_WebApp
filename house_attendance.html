@@ -76,9 +76,7 @@
             </div>
             <div class="col">
                 <h3>House at a glance</h3>
-                <div class="loadergif" v-if="hidegif">
-                    <img src="/img/loading.gif">
-                </div>
+                
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
@@ -108,6 +106,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
 
             </div>
         </div>
@@ -115,9 +116,7 @@
             <div class="col">
                 <h3>Least Engaged</h3>
                 <h3>(Bottom 10% Attendance)</h3>
-                <div class="loadergif" v-if="hidegif">
-                    <img src="/img/loading.gif">
-                </div>
+                
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
 
@@ -133,13 +132,14 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
             </div>
             <div class="col">
                 <h3>Most Engaged</h3>
                 <h3>(Top 10% Attendance)</h3>
-                <div class="loadergif" v-if="hidegif">
-                    <img src="/img/loading.gif">
-                </div>
+                
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
@@ -154,7 +154,9 @@
                         </tr>
                     </tbody>
                 </table>
-                
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
             </div>
         </div>
 
