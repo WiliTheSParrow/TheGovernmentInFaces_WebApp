@@ -123,3 +123,10 @@ body {
 .loadergif {
     text-align: center;
 }
+
+.noMatch{
+    font-size: 30px;
+    text-align: center;
+    padding: 3%;
+    color: #494a3c;
+}

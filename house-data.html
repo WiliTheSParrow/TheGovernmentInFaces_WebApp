@@ -115,7 +115,7 @@
              <div class="loadergif" v-if="hidegif">
                 <img src="/img/loading.gif">
             </div>
-            <p v-if="!isTableFull">No matches found.</p>
+            <p class="noMatch" v-if="!isTableFull"><i class="fas fa-times"></i> No matches found <i class="fas fa-times"></i></p>
         </div>
 
         <!--- FOOTER -->
