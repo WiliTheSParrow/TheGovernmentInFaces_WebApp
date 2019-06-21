@@ -76,7 +76,10 @@
             </div>
             <div class="col">
                 <h3>House at a glance</h3>
-                <table class="table table-stripped">
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
+                <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
                             <th>Party</th>
@@ -105,13 +108,17 @@
                         </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <h3>Least Engaged</h3>
                 <h3>(Bottom 10% Attendance)</h3>
-                <table class="table table-stripped">
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
+                <table class="table table-stripped" v-if="hideTable">
                     <tbody>
 
                         <tr class="tableheader">
@@ -130,7 +137,10 @@
             <div class="col">
                 <h3>Most Engaged</h3>
                 <h3>(Top 10% Attendance)</h3>
-                <table class="table table-stripped">
+                <div class="loadergif" v-if="hidegif">
+                    <img src="/img/loading.gif">
+                </div>
+                <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
                             <th>Name</th>
@@ -144,6 +154,7 @@
                         </tr>
                     </tbody>
                 </table>
+                
             </div>
         </div>
 
@@ -158,7 +169,7 @@
             </div>
         </div>
     </div>
-    
+
     <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
     <!--- LOADING: JSON, JS, jQuery, Bootstrap -->
