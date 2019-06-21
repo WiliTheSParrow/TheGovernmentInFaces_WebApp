@@ -113,8 +113,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <h3>Least Engaged</h3>
-                <h3>(Bottom 10% Attendance)</h3>
+                <h3>Least Loyal (Bottom 10% of Party)</h3>
+                <h3></h3>
                 <div class="loadergif" v-if="hidegif">
                     <img src="/img/loading.gif">
                 </div>
@@ -122,8 +122,8 @@
                     <tbody>
                         <tr class="tableheader">
                             <th>Name</th>
-                            <th>No. Missed Votes</th>
-                            <th>% Missed</th>
+                            <th>No. Party Votes</th>
+                            <th>% Party Votes</th>
                         </tr>
                         <tr v-for="(value, key) in bottomLoyalty">
                             <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
@@ -134,8 +134,8 @@
                 </table>
             </div>
             <div class="col">
-                <h3>Most Engaged</h3>
-                <h3>(Top 10% Attendance)</h3>
+                <h3>Most Loyal (Top 10% of Party)</h3>
+                <h3></h3>
                 <div class="loadergif" v-if="hidegif">
                     <img src="/img/loading.gif">
                 </div>
@@ -143,8 +143,8 @@
                     <tbody>
                         <tr class="tableheader">
                             <th>Name</th>
-                            <th>No. Missed Votes</th>
-                            <th>% Missed</th>
+                            <th>No. Party Votes</th>
+                            <th>% Party Votes</th>
                         </tr>
                         <tr v-for="(value, key) in topLoyalty">
                             <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
