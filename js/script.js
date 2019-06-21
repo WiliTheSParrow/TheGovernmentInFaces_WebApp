@@ -19,7 +19,7 @@ var app = new Vue({
         urlsh: "",
         isTableFull: true,
         hidegif: true,
-        hideTable:true,
+        hideTable: true,
         states: {
             "AL": "Alabama",
             "AK": "Alaska",
@@ -95,7 +95,7 @@ var app = new Vue({
 
     methods: {
         getData: function () {
-            
+
             fetch("https://api.propublica.org/congress/v1/113/" + this.urlsh + "/members.json", {
                     method: "GET",
                     headers: new Headers({
@@ -108,11 +108,12 @@ var app = new Vue({
                     var data = json;
                     app.members = data.results[0].members;
                     app.checkedDataArray = app.members;
+                    app.hidegif = false;
+                    app.hideTable = true;
                     app.countParties();
                     app.sortMembers();
                     app.leastMostVotes();
-                    app.hidegif = false;
-                    app.hideTable = true;
+
 
                 })
                 .catch(function (error) {
