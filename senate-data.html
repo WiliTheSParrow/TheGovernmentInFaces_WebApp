@@ -96,14 +96,14 @@
             <table class="table table-stripped" v-if="isTableFull" v-if="hideTable">
                 <tbody id="table-data" class="table-sm">
                     <tr class="tableheader">
-                        <th>Name</th>
+                        <th class="textRight">Name</th>
                         <th>Party Affiliation</th>
                         <th>State</th>
                         <th>Seniority</th>
                         <th>Percentage of Votes</th>
                     </tr>
                     <tr v-for="(value,key) in checkedDataArray">
-                        <td><a :href="value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</a></td>
+                        <td class="textRight"><a :href="value.url">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</a></td>
                         <td>{{value.party}}</td>
                         <td>{{value.state}}</td>
                         <td>{{value.seniority}}</td>

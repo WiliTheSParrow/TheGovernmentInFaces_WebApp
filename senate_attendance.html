@@ -81,27 +81,27 @@
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
-                            <th>Party</th>
+                            <th class="textRight">Party</th>
                             <th>No. of Reps</th>
                             <th>% Voted with Party</th>
                         </tr>
                         <tr>
-                            <td>Democrats</td>
+                            <td class="textRight">Democrats</td>
                             <td>{{noDemocrats.length}}</td>
                             <td>{{totalPercent(noDemocrats).toFixed(2)}}</td>
                         </tr>
                         <tr>
-                            <td>Republicans</td>
+                            <td class="textRight">Republicans</td>
                             <td>{{noRepublicans.length}}</td>
                             <td>{{totalPercent(noRepublicans).toFixed(2)}}</td>
                         </tr>
                         <tr>
-                            <td>Independents</td>
+                            <td class="textRight">Independents</td>
                             <td>{{noIndependent.length}}</td>
                             <td>{{totalPercent(noIndependent).toFixed(2)}}</td>
                         </tr>
                         <tr>
-                            <td>Total</td>
+                            <td class="textRight">Total</td>
                             <td>{{noParties.length}}</td>
                             <td>{{totalPercent(noParties).toFixed(2)}}</td>
                         </tr>
@@ -121,12 +121,12 @@
                     <tbody>
 
                         <tr class="tableheader">
-                            <th>Name</th>
+                            <th class="textRight">Name</th>
                             <th>No. Missed Votes</th>
                             <th>% Missed</th>
                         </tr>
                         <tr v-for="(value, key) in bottomAttendance">
-                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td class="textRight">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
                             <td>{{value.missed_votes}}</td>
                             <td>{{value.missed_votes_pct.toFixed(2)}}</td>
                         </tr>
@@ -143,12 +143,12 @@
                 <table class="table table-stripped" v-if="hideTable">
                     <tbody>
                         <tr class="tableheader">
-                            <th>Name</th>
+                            <th class="textRight">Name</th>
                             <th>No. Missed Votes</th>
                             <th>% Missed</th>
                         </tr>
                         <tr v-for="(value, key) in topAttendance">
-                            <td>{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
+                            <td class="textRight">{{value.first_name}} {{value.middle_name}} {{value.last_name}}</td>
                             <td>{{value.missed_votes}}</td>
                             <td>{{value.missed_votes_pct.toFixed(2)}}</td>
                         </tr>

@@ -83,9 +83,7 @@ body {
 #footer {
     background: #494a3c;
     color: #ece0be;
-    text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;
-    
-    
+    text-shadow: 1px 1px 2px black, 0 0 25px brown, 0 0 5px darkblue;  
 }
 
 #footerrow{
@@ -129,4 +127,11 @@ body {
     text-align: center;
     padding: 3%;
     color: #494a3c;
+}
+th, td{
+    text-align: center;
+}
+
+.textRight{
+    text-align: left;
 }
