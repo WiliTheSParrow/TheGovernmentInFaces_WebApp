@@ -103,7 +103,7 @@ var app = new Vue({
             fetch("https://api.propublica.org/congress/v1/113/" + this.urlsh + "/members.json", {
                     method: "GET",
                     headers: new Headers({
-                        "X-API-Key": '4nXBqNQbaectboHwhphpVBldHZGmdNLph0DjOSjj'
+                        "X-API-Key": <YOUR_API_KEY>
                     })
                 }).then(function (response) {
                     if (response.ok)
