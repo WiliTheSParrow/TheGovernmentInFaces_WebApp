@@ -6,7 +6,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Here it is](#hereitis)
+* [Visit the page!](#hereitis)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
@@ -28,7 +28,7 @@ The Government In Faces is a web application made for a fictional non-partisan n
 * API
 * Firebase
 
-## Here it is:
+## Here it is! ;-)
 <a href="https://tgifwebapp.firebaseapp.com/">https://tgifwebapp.firebaseapp.com/</a>
 
 ## Features
