@@ -90,12 +90,16 @@ var app = new Vue({
             this.urlsh = "house";
         };
 
-        this.getData();
+        if (location.pathname != "/home.html") {
+            this.getData();
+            
+        }
+
+
     },
 
     methods: {
         getData: function () {
-
             fetch("https://api.propublica.org/congress/v1/113/" + this.urlsh + "/members.json", {
                     method: "GET",
                     headers: new Headers({
