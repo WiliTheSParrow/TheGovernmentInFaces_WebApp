@@ -18,17 +18,17 @@ The Government In Faces is a web application made for a fictional non-partisan n
 ## Technologies
 * Vue.js
 * JavaScript
-* jQuery 3
+* jQuery
 * HTML5
 * CSS
-* Bootstrap 4
+* Bootstrap
 * Fontawesome
 * AJAX
 * JSON
 * API
 * Firebase
 
-## Here it is! ;-)
+## Here it is! 😉
 <a href="https://tgifwebapp.firebaseapp.com/">https://tgifwebapp.firebaseapp.com/</a>
 
 ## Features
