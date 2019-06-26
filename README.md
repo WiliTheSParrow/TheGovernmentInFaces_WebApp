@@ -6,7 +6,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Visit the page!](#hereitis)
+* [Visit the page!](#Click-on-the-link-below-to-check-out-this-project)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
