@@ -28,8 +28,8 @@ The Government In Faces is a web application made for a fictional non-partisan n
 * API
 * Firebase
 
-## Here it is! 😉
-<a href="https://tgifwebapp.firebaseapp.com/">https://tgifwebapp.firebaseapp.com/</a>
+## Here it is!
+<a href="https://tgifwebapp.firebaseapp.com/">https://tgifwebapp.firebaseapp.com/</a> 😉
 
 ## Features
 * Version 1.0
